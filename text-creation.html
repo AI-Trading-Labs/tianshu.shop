@@ -178,11 +178,15 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 <div class="content-block" style="padding:28px">
 
 <details style="margin-bottom:16px">
-<summary style="cursor:pointer;color:#64748b;font-size:13px;padding:4px 0">⚙️ API 设置</summary>
+<summary style="cursor:pointer;color:#64748b;font-size:13px;padding:4px 0">⚙️ API 设置（可更换为任何 OpenAI 兼容接口）</summary>
 <div style="margin-top:12px;padding:16px;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(59,130,246,0.06)">
-<label style="font-size:12px;color:#64748b;display:block;margin-bottom:6px">输入你的 NVIDIA API Key（存储在本地浏览器）：</label>
-<input id="apiKey" type="password" placeholder="nvapi-..." style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(59,130,246,0.12);border-radius:8px;color:#c8d6e5;font-size:13px;outline:none;font-family:monospace">
-<p style="font-size:11px;color:#475569;margin-top:6px">🔒 仅保存在浏览器 localStorage，不会上传到任何服务器</p>
+<label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">API 地址：</label>
+<input id="apiUrl" type="url" value="https://api.deepseek.com/v1/chat/completions" style="width:100%;padding:10px 14px;margin-bottom:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(59,130,246,0.12);border-radius:8px;color:#c8d6e5;font-size:12px;outline:none;font-family:monospace">
+<label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">模型名称：</label>
+<input id="modelName" type="text" value="deepseek-chat" style="width:100%;padding:10px 14px;margin-bottom:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(59,130,246,0.12);border-radius:8px;color:#c8d6e5;font-size:12px;outline:none;font-family:monospace">
+<label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">API Key：</label>
+<input id="apiKey" type="password" placeholder="sk-..." style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(59,130,246,0.12);border-radius:8px;color:#c8d6e5;font-size:13px;outline:none;font-family:monospace">
+<p style="font-size:11px;color:#475569;margin-top:6px">🔒 仅保存在本地浏览器</p>
 </div>
 </details>
 
@@ -208,33 +212,41 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 </div>
 
 <script>
+(function(){
+  const KEY='api_deepseek_key',URL='api_deepseek_url',MODEL='api_deepseek_model';
+  if(localStorage.getItem(KEY)) document.getElementById('apiKey').value=localStorage.getItem(KEY);
+  if(localStorage.getItem(URL)) document.getElementById('apiUrl').value=localStorage.getItem(URL);
+  if(localStorage.getItem(MODEL)) document.getElementById('modelName').value=localStorage.getItem(MODEL);
+})();
+
 function generateText(){
-  const key=document.getElementById('apiKey').value||localStorage.getItem('nim_api_key');
-  const prompt=document.getElementById('promptInput').value;
+  const url=document.getElementById('apiUrl').value.trim();
+  const key=document.getElementById('apiKey').value.trim();
+  const model=document.getElementById('modelName').value.trim();
+  const prompt=document.getElementById('promptInput').value.trim();
   const style=document.getElementById('styleSelect').value;
   const max=parseInt(document.getElementById('maxTokens').value)||1024;
-  if(!key){alert('请先在⚙️ API设置中输入你的NVIDIA API Key');return}
+  if(!url){alert('请输入 API 地址');return}
+  if(!key){alert('请输入 API Key');return}
   if(!prompt){alert('请输入写作主题');return}
-  localStorage.setItem('nim_api_key',key);
+  localStorage.setItem('api_deepseek_key',key);
+  localStorage.setItem('api_deepseek_url',url);
+  localStorage.setItem('api_deepseek_model',model);
   document.getElementById('loadingArea').style.display='block';
   const r=document.getElementById('resultArea');r.style.display='none';
   const sys={"通用":"你是一个专业的AI写作助手，请根据用户的要求生成高质量的中文内容。","小说":"你是一个小说创作助手。请根据用户设定创作小说章节，注重情节推进和场景描写，语言生动，使用中文。","文案":"你是一个文案写手。请创作营销文案，注重说服力，使用中文。","日志":"你是一位AI创业者的日志撰写助手。请用第一人称记录真实的创业过程、思考和收获。"};
-  fetch('https://integrate.api.nvidia.com/v1/chat/completions',{
+  fetch(url,{
     method:'POST',
     headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
-    body:JSON.stringify({model:'z-ai/glm-5.1',messages:[{role:'system',content:sys[style]},{role:'user',content:prompt}],temperature:0.8,max_tokens:max})
+    body:JSON.stringify({model:model,messages:[{role:'system',content:sys[style]},{role:'user',content:prompt}],temperature:0.8,max_tokens:max})
   }).then(res=>res.json()).then(data=>{
-    const t=data.choices?.[0]?.message?.content||'⚠️ 生成失败: '+JSON.stringify(data);
+    const t=data.choices?.[0]?.message?.content||'⚠️ 返回异常: '+JSON.stringify(data);
     r.textContent=t;r.style.display='block';document.getElementById('loadingArea').style.display='none';
   }).catch(e=>{
-    r.textContent='⚠️ 请求失败: '+e.message+'
-\n🤔 提示：如果提示CORS错误，说明NVIDIA API不允许浏览器直接调用。你可以试试：\n1. 在API设置中更换为其他支持CORS的API地址\n2. 或使用浏览器插件CORS Unblock临时解决\n3. 后续我们会加上代理方案';r.style.display='block';document.getElementById('loadingArea').style.display='none';
+    let msg=e.message;
+    if(msg.includes('Failed to fetch')) msg='无法连接到 API 服务器，可能是网络或CORS问题。试试换个 API 地址（如DeepSeek、SiliconFlow等）。';
+    r.textContent='⚠️ 请求失败: '+msg;r.style.display='block';document.getElementById('loadingArea').style.display='none';
   });
-}
-
-// Auto-load saved key
-if(localStorage.getItem('nim_api_key')){
-  document.getElementById('apiKey').value=localStorage.getItem('nim_api_key');
 }
 </script>
 
