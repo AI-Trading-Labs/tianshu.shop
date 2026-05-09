@@ -3,50 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>天枢探索 — AI创作工具箱</title>
-<meta name="description" content="天枢探索 — 文字创作与视频创作，AI创作工具箱。">
+<title>天枢探索 — AI内容实验记录</title>
+<meta name="description" content="天枢探索 — 一个普通人用AI搭建内容自动化系统的实验记录">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#050816;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;position:relative;overflow-x:hidden;min-height:100vh}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(2px 2px at 31% 57%,rgba(255,255,255,0.19),transparent),radial-gradient(1px 1px at 21% 18%,rgba(255,255,255,0.26),transparent);z-index:-1;pointer-events:none}
-.container{max-width:800px;margin:0 auto;padding:0 24px;min-height:100vh;display:flex;flex-direction:column}
-.wave{position:fixed;bottom:0;left:0;width:100%;height:120px;background:linear-gradient(180deg,transparent,rgba(139,92,246,0.03),rgba(236,72,153,0.02));z-index:-1;pointer-events:none}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid rgba(139,92,246,0.15)}
-.nav-brand{font-size:20px;font-weight:700;letter-spacing:2px;background:linear-gradient(90deg,#818cf8,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+body{background:linear-gradient(170deg,#0f0a1a 0%,#0d0b20 40%,#0a0e22 100%);color:#c8d6e5;font-family:"Noto Sans SC","PingFang SC",sans-serif;line-height:1.8;min-height:100vh}
+/* Soft gradient particles */
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+background:radial-gradient(ellipse at 20% 50%,rgba(139,92,246,0.06),transparent 50%),
+radial-gradient(ellipse at 80% 30%,rgba(236,72,153,0.04),transparent 50%),
+radial-gradient(ellipse at 50% 80%,rgba(129,140,248,0.03),transparent 50%);
+z-index:-1;pointer-events:none}
+.container{max-width:720px;margin:0 auto;padding:0 24px;min-height:100vh;display:flex;flex-direction:column}
+
+/* Nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0 20px;border-bottom:1px solid rgba(139,92,246,0.08)}
+.nav-brand{font-size:18px;font-weight:700;letter-spacing:2px;background:linear-gradient(90deg,#a78bfa,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;gap:16px}
-.nav-links a{color:#94a3b8;text-decoration:none;font-size:12px}
-.nav-links a:hover{color:#818cf8}
-.hero{padding:40px 0 24px;text-align:center}
-.hero .title{font-size:40px;font-weight:700;letter-spacing:4px;background:linear-gradient(90deg,#a78bfa,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px}
-.hero .sub{font-size:12px;color:#475569;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px}
-.hero .desc{font-size:13px;color:#64748b;margin-top:10px;line-height:1.8;max-width:500px;margin-left:auto;margin-right:auto}
-.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;flex:1;padding:20px 0 40px}
-.split-card{border-radius:20px;padding:40px 28px;text-decoration:none;color:inherit;transition:0.3s;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:320px}
-.split-card.static{background:linear-gradient(135deg,rgba(59,130,246,0.12),rgba(129,140,248,0.06));border:1px solid rgba(59,130,246,0.2)}
-.split-card.dynamic{background:linear-gradient(135deg,rgba(139,92,246,0.12),rgba(236,72,153,0.06));border:1px solid rgba(139,92,246,0.2)}
-.split-card:hover{transform:translateY(-6px)}
-.split-card.static:hover{border-color:#3B82F6;box-shadow:0 0 40px rgba(59,130,246,0.08)}
-.split-card.dynamic:hover{border-color:#8B5CF6;box-shadow:0 0 40px rgba(139,92,246,0.08)}
-.split-card .s-icon{font-size:48px;margin-bottom:16px}
-.split-card .s-title{font-size:24px;font-weight:700;letter-spacing:2px;margin-bottom:8px}
-.split-card.static .s-title{color:#60a5fa}
-.split-card.dynamic .s-title{color:#a78bfa}
-.split-card .s-desc{font-size:13px;color:#64748b;line-height:1.8;margin-bottom:12px}
-.split-card .s-sub{font-size:11px;color:#475569;margin-top:4px}
-.split-card .s-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-.split-card .s-tags span{font-size:11px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.04);color:#64748b;border:1px solid rgba(255,255,255,0.06)}
-.split-card .enter{font-size:13px;margin-top:16px;font-weight:600}
-.split-card.static .enter{color:#60a5fa}
-.split-card.dynamic .enter{color:#a78bfa}
-.footer{margin-top:auto;padding:24px 0;text-align:center;border-top:1px solid rgba(139,92,246,0.1);font-size:12px;color:#475569}
-.footer a{color:#818cf8;text-decoration:none}
-.footer .note{font-size:11px;color:#334155;margin-top:4px}
-@media(max-width:640px){.split-grid{grid-template-columns:1fr}.split-card{min-height:240px}}
+.nav-links a{color:#64748b;text-decoration:none;font-size:12px;transition:0.2s;letter-spacing:1px}
+.nav-links a:hover{color:#a78bfa}
+
+/* Personal Intro */
+.intro{display:flex;align-items:center;gap:20px;padding:36px 0 28px}
+.intro-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(236,72,153,0.1));border:2px solid rgba(139,92,246,0.15);display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0}
+.intro-text{flex:1}
+.intro-text h1{font-size:22px;font-weight:700;color:#e2e8f0;letter-spacing:1px;margin-bottom:4px}
+.intro-text .tagline{font-size:13px;color:#818cf8;letter-spacing:2px;font-weight:300}
+.intro-text p{font-size:13px;color:#64748b;margin-top:6px;line-height:1.7}
+
+/* Status badges */
+.status-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;padding:0 0 8px}
+.status-badge{font-size:11px;padding:4px 14px;border-radius:20px;background:rgba(139,92,246,0.08);color:#a78bfa;border:1px solid rgba(139,92,246,0.12);letter-spacing:0.5px}
+.status-badge.hot{background:rgba(236,72,153,0.1);color:#f472b6;border-color:rgba(236,72,153,0.15)}
+.status-badge.new{background:rgba(59,130,246,0.08);color:#60a5fa;border-color:rgba(59,130,246,0.12)}
+
+/* Section title */
+.section-title{font-size:15px;font-weight:600;color:#94a3b8;margin:8px 0 20px;padding-left:10px;border-left:2px solid #a78bfa;letter-spacing:1px}
+
+/* Experiment Cards */
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.exp-card{border-radius:16px;padding:32px 24px;text-decoration:none;color:inherit;transition:0.3s;display:flex;flex-direction:column;align-items:center;text-align:center;background:rgba(129,140,248,0.03);border:1px solid rgba(129,140,248,0.08);position:relative;overflow:hidden}
+.exp-card::after{content:'';position:absolute;bottom:0;left:20%;width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(129,140,248,0.3),transparent);opacity:0;transition:0.3s}
+.exp-card:hover::after{opacity:1}
+.exp-card.write{border-color:rgba(59,130,246,0.15)}
+.exp-card.write:hover{border-color:#3B82F6;transform:translateY(-4px);box-shadow:0 8px 32px rgba(59,130,246,0.06)}
+.exp-card.write .e-title{color:#60a5fa}
+.exp-card.video{border-color:rgba(139,92,246,0.15)}
+.exp-card.video:hover{border-color:#8B5CF6;transform:translateY(-4px);box-shadow:0 8px 32px rgba(139,92,246,0.06)}
+.exp-card.video .e-title{color:#a78bfa}
+.exp-card .e-icon{font-size:40px;margin-bottom:12px}
+.exp-card .e-title{font-size:18px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+.exp-card .e-desc{font-size:12px;color:#64748b;line-height:1.7}
+.exp-card .e-tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.exp-card .e-tags span{font-size:10px;padding:2px 10px;border-radius:12px;background:rgba(255,255,255,0.03);color:#475569;border:1px solid rgba(255,255,255,0.04)}
+.exp-card .e-enter{font-size:12px;margin-top:14px;font-weight:600;letter-spacing:1px}
+.exp-card.write .e-enter{color:#60a5fa}
+.exp-card.video .e-enter{color:#a78bfa}
+
+/* Latest updates */
+.updates{border:1px solid rgba(139,92,246,0.06);border-radius:12px;padding:20px;margin-bottom:28px;background:rgba(139,92,246,0.02)}
+.update-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+.update-item:last-child{border-bottom:none;padding-bottom:0}
+.update-item:first-child{padding-top:0}
+.update-dot{width:6px;height:6px;border-radius:50%;margin-top:7px;flex-shrink:0}
+.update-dot.blue{background:#3B82F6}
+.update-dot.purple{background:#8B5CF6}
+.update-dot.pink{background:#EC4899}
+.update-content{flex:1}
+.update-content .u-title{font-size:13px;color:#c8d6e5;font-weight:500}
+.update-content .u-title a{color:#818cf8;text-decoration:none}
+.update-content .u-title a:hover{color:#a78bfa}
+.update-content .u-meta{font-size:11px;color:#475569;margin-top:2px}
+
+/* Footer */
+.footer{margin-top:auto;padding:32px 0 24px;text-align:center;border-top:1px solid rgba(139,92,246,0.06)}
+.footer .foot-line1{font-size:13px;color:#64748b;letter-spacing:1px;margin-bottom:4px}
+.footer .foot-line2{font-size:12px;color:#475569}
+.footer .foot-line2 a{color:#818cf8;text-decoration:none}
+.footer .note{font-size:11px;color:#334155;margin-top:8px}
+
+@media(max-width:640px){.exp-grid{grid-template-columns:1fr}.intro{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
 <div class="container">
 
+<!-- Nav -->
 <div class="nav">
 <div class="nav-brand">✳ 天枢探索</div>
 <div class="nav-links">
@@ -54,48 +97,85 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 </div>
 </div>
 
-<div class="hero">
-<div class="title">天枢探索</div>
-<div class="sub">D I S C O V E R Y</div>
-<div class="desc">一个普通人用 AI 搭建内容自动化系统的实验记录<br>
-<span style="font-size:12px;color:#475569;">写作 · 视频 · 创业 · 踩坑 · 成长</span></div>
+<!-- Intro -->
+<div class="intro">
+<div class="intro-avatar">🐉</div>
+<div class="intro-text">
+<h1>天枢探索</h1>
+<div class="tagline">D I S C O V E R Y</div>
+<p>一个普通人用 AI 搭建内容自动化系统的实验记录。<br>写作 · 视频 · 创业 · 踩坑 · 成长 — 全部真实公开。</p>
+</div>
 </div>
 
-<div class="split-grid">
+<div class="status-row">
+<span class="status-badge new">🔄 持续更新中</span>
+<span class="status-badge">📝 创业日志 Day 2</span>
+<span class="status-badge hot">🔥 《天枢》小说创作中</span>
+<span class="status-badge">🧪 实验模式</span>
+</div>
 
-<a href="text-creation.html" class="split-card static">
-<div class="s-icon">✍️</div>
-<div class="s-title">文字实验</div>
-<div class="s-desc">小说 · 文案 · 创业日志<br>所有文字内容的AI创作实验</div>
-<div class="s-tags">
+<!-- Experiments -->
+<div class="section-title">正在进行中的实验</div>
+
+<div class="exp-grid">
+<a href="text-creation.html" class="exp-card write">
+<div class="e-icon">✍️</div>
+<div class="e-title">文字实验</div>
+<div class="e-desc">AI小说 · 文案 · 创业日志<br>用AI写作自动化内容生产</div>
+<div class="e-tags">
 <span>AI小说</span>
-<span>文案写作</span>
 <span>创业日志</span>
 <span>自动化工作流</span>
 </div>
-<div class="enter">进入 →</div>
+<div class="e-enter">进入实验室 →</div>
 </a>
-
-<a href="video-creation.html" class="split-card dynamic">
-<div class="s-icon">🎥</div>
-<div class="s-title">视频实验</div>
-<div class="s-desc">短视频 · 动漫 · AI配音<br>视频内容的多模态创作尝试</div>
-<div class="s-tags">
+<a href="video-creation.html" class="exp-card video">
+<div class="e-icon">🎥</div>
+<div class="e-title">视频实验</div>
+<div class="e-desc">短视频 · AI动漫 · 配音<br>多模态内容创作探索</div>
+<div class="e-tags">
 <span>短视频试水</span>
 <span>AI动漫</span>
 <span>AI配音</span>
-<span>自动剪辑</span>
 </div>
-<div class="enter">进入 →</div>
+<div class="e-enter">进入实验室 →</div>
 </a>
-
 </div>
 
+<!-- Latest Updates -->
+<div class="section-title">最新动态</div>
+
+<div class="updates">
+<div class="update-item">
+<div class="update-dot blue"></div>
+<div class="update-content">
+<div class="u-title"><a href="https://tianshu.ink/articles/2026-05-09-startup-day2.html">📌 创业日志 Day2</a> — 法律合规整改与品牌拆分</div>
+<div class="u-meta">2026-05-09 · 天枢洞察/探索品牌分离 · 删除54处合规风险内容</div>
+</div>
+</div>
+<div class="update-item">
+<div class="update-dot purple"></div>
+<div class="update-content">
+<div class="u-title"><a href="https://tianshu.ink/articles/2026-05-08-startup-day1.html">📌 创业日志 Day1</a> — 从零搭建AI交易研究平台</div>
+<div class="u-meta">2026-05-08 · 系统上线 · 第一个工具部署</div>
+</div>
+</div>
+<div class="update-item">
+<div class="update-dot pink"></div>
+<div class="update-content">
+<div class="u-title">📖 《天枢》小说 — 第一章《衣冠冢》写作中（枢轮版改写）</div>
+<div class="u-meta">进行中 · 世界观设定已完成 · 枢轮九境修炼体系</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
 <div class="footer">
-<p>从0开始 · 真实记录 · 持续更新</p>
-<p>&copy; 2026 <a href="https://tianshu.ink">天枢洞察</a> · 天枢探索</p>
-<p class="note">🤖 本站内容由AI生成 · 仅供学习参考</p>
+<div class="foot-line1">从0开始 · 真实记录 · 持续更新</div>
+<div class="foot-line2">&copy; 2026 <a href="https://tianshu.ink">天枢洞察</a> · 天枢探索</div>
+<div class="note">🤖 本站内容由AI生成 · 仅供学习参考</div>
 </div>
+
 </div>
 </body>
 </html>
