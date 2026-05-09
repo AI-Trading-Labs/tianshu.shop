@@ -173,6 +173,71 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 </ul>
 </div>
 
+<!-- AI在线写作实验 -->
+<div class="section-title">✍️ AI在线写作（实验）</div>
+<div class="content-block" style="padding:28px">
+
+<details style="margin-bottom:16px">
+<summary style="cursor:pointer;color:#64748b;font-size:13px;padding:4px 0">⚙️ API 设置</summary>
+<div style="margin-top:12px;padding:16px;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(59,130,246,0.06)">
+<label style="font-size:12px;color:#64748b;display:block;margin-bottom:6px">输入你的 NVIDIA API Key（存储在本地浏览器）：</label>
+<input id="apiKey" type="password" placeholder="nvapi-..." style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(59,130,246,0.12);border-radius:8px;color:#c8d6e5;font-size:13px;outline:none;font-family:monospace">
+<p style="font-size:11px;color:#475569;margin-top:6px">🔒 仅保存在浏览器 localStorage，不会上传到任何服务器</p>
+</div>
+</details>
+
+<textarea id="promptInput" placeholder="输入你想写的内容主题...（例如：写一段都市逆袭小说的开头）" rows="4" style="width:100%;padding:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(59,130,246,0.1);border-radius:10px;color:#c8d6e5;font-size:14px;outline:none;resize:vertical;font-family:inherit;line-height:1.7"></textarea>
+
+<div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;align-items:center">
+<select id="styleSelect" style="padding:10px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(59,130,246,0.12);border-radius:8px;color:#c8d6e5;font-size:13px;outline:none;flex:1;min-width:100px">
+<option value="通用">通用写作</option>
+<option value="小说">小说章节</option>
+<option value="文案">营销文案</option>
+<option value="日志">创业日志</option>
+</select>
+<label style="font-size:12px;color:#64748b;display:flex;align-items:center;gap:6px">字数 <input id="maxTokens" type="number" value="1024" min="256" max="4096" style="width:70px;padding:6px 8px;background:rgba(255,255,255,0.04);border:1px solid rgba(59,130,246,0.12);border-radius:6px;color:#c8d6e5;font-size:12px;outline:none;text-align:center"></label>
+<button onclick="generateText()" style="padding:10px 28px;background:linear-gradient(90deg,#3B82F6,#22D3EE);border:none;border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:1px;transition:0.2s">✍️ 生成</button>
+</div>
+
+<div id="loadingArea" style="margin-top:16px;text-align:center;display:none">
+<div style="display:inline-block;padding:12px 24px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.12);border-radius:10px">⏳ <span style="color:#22D3EE;font-size:14px;font-weight:500">AI 正在写作中...</span></div>
+</div>
+
+<div id="resultArea" style="margin-top:16px;padding:20px;background:rgba(255,255,255,0.02);border:1px solid rgba(59,130,246,0.08);border-radius:10px;min-height:60px;color:#94a3b8;font-size:14px;line-height:1.8;white-space:pre-wrap;display:none"></div>
+
+</div>
+
+<script>
+function generateText(){
+  const key=document.getElementById('apiKey').value||localStorage.getItem('nim_api_key');
+  const prompt=document.getElementById('promptInput').value;
+  const style=document.getElementById('styleSelect').value;
+  const max=parseInt(document.getElementById('maxTokens').value)||1024;
+  if(!key){alert('请先在⚙️ API设置中输入你的NVIDIA API Key');return}
+  if(!prompt){alert('请输入写作主题');return}
+  localStorage.setItem('nim_api_key',key);
+  document.getElementById('loadingArea').style.display='block';
+  const r=document.getElementById('resultArea');r.style.display='none';
+  const sys={"通用":"你是一个专业的AI写作助手，请根据用户的要求生成高质量的中文内容。","小说":"你是一个小说创作助手。请根据用户设定创作小说章节，注重情节推进和场景描写，语言生动，使用中文。","文案":"你是一个文案写手。请创作营销文案，注重说服力，使用中文。","日志":"你是一位AI创业者的日志撰写助手。请用第一人称记录真实的创业过程、思考和收获。"};
+  fetch('https://integrate.api.nvidia.com/v1/chat/completions',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+    body:JSON.stringify({model:'z-ai/glm-5.1',messages:[{role:'system',content:sys[style]},{role:'user',content:prompt}],temperature:0.8,max_tokens:max})
+  }).then(res=>res.json()).then(data=>{
+    const t=data.choices?.[0]?.message?.content||'⚠️ 生成失败: '+JSON.stringify(data);
+    r.textContent=t;r.style.display='block';document.getElementById('loadingArea').style.display='none';
+  }).catch(e=>{
+    r.textContent='⚠️ 请求失败: '+e.message+'
+\n🤔 提示：如果提示CORS错误，说明NVIDIA API不允许浏览器直接调用。你可以试试：\n1. 在API设置中更换为其他支持CORS的API地址\n2. 或使用浏览器插件CORS Unblock临时解决\n3. 后续我们会加上代理方案';r.style.display='block';document.getElementById('loadingArea').style.display='none';
+  });
+}
+
+// Auto-load saved key
+if(localStorage.getItem('nim_api_key')){
+  document.getElementById('apiKey').value=localStorage.getItem('nim_api_key');
+}
+</script>
+
 <!-- 精选文章 -->
 <div class="section-title">精选内容</div>
 <div class="article-list">
