@@ -1,190 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>鏂囧瓧瀹為獙 鈥?澶╂灑鎺㈢储</title>
-<meta name="description" content="澶╂灑鎺㈢储 鏂囧瓧瀹為獙锛欰I灏忚鍒涗綔銆佹枃妗堝啓浣溿€侊紝AI鏂囧瓧鍐呭鑷姩鍖栧疄楠屻€?>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#080c18;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;position:relative;overflow-x:hidden;min-height:100vh}
-/* bg handled by .stars div */
-.container{max-width:800px;margin:0 auto;padding:0 24px}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid rgba(59,130,246,0.2)}
-.nav-brand{font-size:20px;font-weight:700;letter-spacing:2px;background:linear-gradient(90deg,#818cf8,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links{display:flex;gap:16px;align-items:center}
-.nav-links a{color:#94a3b8;text-decoration:none;font-size:12px}
-.nav-links a:hover{color:#818cf8}
-.back-link{display:inline-block;margin:20px 0;color:#818cf8;text-decoration:none;font-size:13px}
-.back-link:hover{opacity:0.8}
-.page-header{text-align:center;padding:8px 0 4px}
-.page-header h1{font-size:28px;font-weight:700;background:linear-gradient(90deg,#3B82F6,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.subtitle{font-size:13px;color:#64748b;margin-bottom:24px;text-align:center}
-.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
-.cat-card{padding:28px 20px;border:1px solid rgba(59,130,246,0.12);border-radius:14px;text-decoration:none;color:inherit;transition:0.3s;background:rgba(59,130,246,0.02);text-align:center}
-.cat-card:hover{border-color:#3B82F6;transform:translateY(-3px);box-shadow:0 0 24px rgba(59,130,246,0.06)}
-.cat-card .icon{font-size:36px;margin-bottom:8px}
-.cat-card h3{font-size:16px;font-weight:600;color:#60a5fa;margin-bottom:6px;letter-spacing:1px}
-.cat-card p{font-size:12px;color:#64748b;line-height:1.6}
-.cat-card .enter{font-size:12px;color:#60a5fa;margin-top:10px}
-.section-title{font-size:16px;font-weight:600;color:#94a3b8;margin:32px 0 16px;padding-left:12px;border-left:3px solid #3B82F6}
-.content-block{padding:24px;border:1px solid rgba(59,130,246,0.1);border-radius:14px;background:rgba(59,130,246,0.03);margin-bottom:20px}
-.content-block h3{font-size:16px;color:#60a5fa;margin-bottom:8px}
-.content-block p{font-size:13px;color:#94a3b8;line-height:1.8;margin-bottom:8px}
-.content-block li{font-size:13px;color:#64748b;line-height:1.8;margin-left:16px;padding:2px 0}
-.styles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
-.style-item{padding:16px 10px;border:1px solid rgba(59,130,246,0.08);border-radius:10px;text-align:center;background:rgba(59,130,246,0.02)}
-.style-item .s-icon{font-size:24px;margin-bottom:4px}
-.style-item .s-name{font-size:13px;color:#c8d6e5}
-.style-item .s-desc{font-size:11px;color:#475569;margin-top:2px}
-.article-list{display:grid;gap:10px;margin-bottom:24px}
-.article-item{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-radius:10px;border:1px solid rgba(59,130,246,0.08);text-decoration:none;color:inherit;transition:0.2s}
-.article-item:hover{border-color:rgba(59,130,246,0.25);background:rgba(59,130,246,0.03)}
-.article-item .a-title{font-size:14px;color:#e2e8f0}
-.article-item .a-date{font-size:11px;color:#475569}
-.footer{margin-top:48px;padding:24px 0;text-align:center;border-top:1px solid rgba(59,130,246,0.1);font-size:12px;color:#475569}
-.footer a{color:#818cf8;text-decoration:none}
-.footer .note{font-size:11px;color:#334155;margin-top:4px}
-@media(max-width:640px){.cat-grid{grid-template-columns:1fr}.styles-grid{grid-template-columns:repeat(2,1fr)}}
-
-.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-.star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 4s infinite; }
-@keyframes twinkle { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
-
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>文字实验 — 天枢探索</title>
+<meta name="description" content="天枢探索 — AI文字创作实验">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0e1a;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:1.8;min-height:100vh}
+.container{max-width:720px;margin:0 auto;padding:40px 24px}
+a{color:#818cf8;text-decoration:none}
+a:hover{text-decoration:underline}
+h1{font-size:28px;margin-bottom:8px;background:linear-gradient(135deg,#3B82F6,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{font-size:14px;color:#64748b;margin-bottom:32px}
+.card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px;margin-bottom:16px}
+.card h3{color:#93c5fd;margin-bottom:8px;font-size:16px}
+.card p{font-size:14px;color:#94a3b8;margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:2px 10px;border-radius:20px;background:rgba(147,197,253,0.1);color:#93c5fd;margin-right:6px}
+.back{display:inline-block;margin-bottom:28px;color:#64748b;font-size:13px}</style>
 </head>
 <body>
-<div class="stars"></div>
 <div class="container">
-
-<div class="nav">
-<div class="nav-brand">鉁?澶╂灑鎺㈢储</div>
-<div class="nav-links">
-<a href="index.html">棣栭〉</a>
-<a href="video-creation.html">瑙嗛瀹為獙</a>
-<a href="https://tianshu.ink">澶╂灑娲炲療</a>
-</div>
-</div>
-
-<a href="index.html" class="back-link">鈫?杩斿洖棣栭〉</a>
-
-<div class="page-header">
-<h1>馃摉 鏂囧瓧瀹為獙</h1>
-</div>
-<p class="subtitle">灏忚 路 鏂囨 路 鏃ュ織 鈥?AI鏂囧瓧鍒涗綔瀹為獙</p>
-
-<div style="text-align:center;padding:4px 0 20px;">
-</div>
-
-<!-- 宸ュ叿鍗＄墖鍏ュ彛 -->
-<div class="cat-grid">
-
-<div class="cat-card" onclick="document.getElementById('novel').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
-<div class="icon">馃摑</div>
-<h3>AI灏忚鍒涗綔</h3>
-<p>杈撳叆涓昏鍚嶅拰椋庢牸 路 AI鑷姩鐢熸垚瀹屾暣绔犺妭<br>閮藉競閫嗚 路 鎴樼褰掓潵 路 淇湡涓栫晫 路 鍔ㄦ极</p>
-<div class="enter">寮€濮嬪啓浣?鈫?/div>
-</div>
-
-<div class="cat-card" onclick="document.getElementById('writing').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
-<div class="icon">鉁嶏笍</div>
-<h3>AI鏂囨鍐欎綔</h3>
-<p>浜у搧鏂囨 路 钀ラ攢鏂囨 路 鍏紬鍙锋枃绔?br>鐭棰戣剼鏈?路 SEO鍐呭 路 绀句氦鏍囬</p>
-<div class="enter">寮€濮嬪啓浣?鈫?/div>
-</div>
-
-<div class="cat-card" onclick="window.open('https://tianshu.shop','_blank')" style="cursor:pointer">
-<div class="icon">馃搫</div>
-<h3>AI鏂囨。鍔╂墜</h3>
-<p>AI鍐欎綔 路 鏂囨鐢熸垚 路 鏅鸿兘鏍″<br>楂樻晥浜у嚭 路 涓€閿紭鍖?/p>
-<div class="enter">鏌ョ湅妯℃澘 鈫?/div>
-</div>
-
-<div class="cat-card" onclick="window.open('https://tianshu.shop','_blank')" style="cursor:pointer">
-<div class="icon">馃摑</div>
-<h3></h3>
-<p>澶╂灑AI鍒涗笟瀹為獙璁板綍<br>鐪熷疄韪╁潙鍒嗕韩 路 杩唬杩囩▼鍏ㄥ叕寮€</p>
-<div class="enter">闃呰鏃ュ織 鈫?/div>
-</div>
-
-</div>
-
-<!-- AI灏忚鍒涗綔 璇︽儏鍖?-->
-<div id="novel" class="section-title">AI灏忚鍒涗綔</div>
-<div class="content-block">
-<h3>涓€閿敓鎴愭祦绋?/h3>
-<div class="styles-grid">
-<div class="style-item">
-<div class="s-icon">馃摑</div>
-<div class="s-name">杈撳叆璁惧畾</div>
-<div class="s-desc">涓昏鍚?椋庢牸+绫诲瀷</div>
-</div>
-<div class="style-item">
-<div class="s-icon">馃摉</div>
-<div class="s-name">鐢熸垚灏忚</div>
-<div class="s-desc">AI鑷姩鍐欏嚭瀹屾暣绔犺妭</div>
-</div>
-<div class="style-item">
-<div class="s-icon">馃帹</div>
-<div class="s-name">澶氱椋庢牸</div>
-<div class="s-desc">閮藉競/鎴樼/淇湡/鍔ㄦ极</div>
-</div>
-<div class="style-item">
-<div class="s-icon">馃摛</div>
-<div class="s-name">瀵煎嚭浣跨敤</div>
-<div class="s-desc">绾枃鏈?鏍煎紡鍖栬緭鍑?/div>
-</div>
-</div>
-</div>
-
-<div class="content-block">
-<h3>鐑棬椋庢牸妯℃澘</h3>
-<div class="styles-grid">
-<div class="style-item">
-<div class="s-icon">馃彊锔?/div>
-<div class="s-name">閮藉競閫嗚</div>
-<div class="s-desc">鑽夋牴缈昏韩路鍟嗘垬澶嶄粐</div>
-</div>
-<div class="style-item">
-<div class="s-icon">鈿旓笍</div>
-<div class="s-name">鎴樼褰掓潵</div>
-<div class="s-desc">鏃犳晫褰掓潵路鐑鐖芥枃</div>
-</div>
-<div class="style-item">
-<div class="s-icon">馃寗</div>
-<div class="s-name">淇湡涓栫晫</div>
-<div class="s-desc">淇粰路鐜勫够路椋炲崌</div>
-</div>
-<div class="style-item">
-<div class="s-icon">馃帹</div>
-<div class="s-name">鍔ㄦ极椋庢牸</div>
-<div class="s-desc">鏃ユ极椋幝峰浗婕路杞诲皬璇?/div>
-</div>
-</div>
-<p style="font-size:12px;color:#475569;text-align:center;margin-top:8px;">馃挕 Pro鐗堣В閿佸叏閮ㄩ鏍?+ 鏃犻檺鐢熸垚</p>
-</div>
-
-<!-- AI鏂囨鍐欎綔 璇︽儏鍖?-->
-<div id="writing" class="section-title">AI鏂囨鍐欎綔</div>
-<div class="content-block">
-<h3>鍙敓鎴愮殑鏂囨绫诲瀷</h3>
-<ul>
-<li><strong>钀ラ攢鏂囨</strong> 鈥?浜у搧鍗栫偣銆佸搧鐗屾晠浜嬨€佷績閿€璇濇湳</li>
-<li><strong>鐭棰戣剼鏈?/strong> 鈥?鍙ｆ挱銆佸満鏅€佸瓧骞曚竴浣撳寲</li>
-<li><strong>鍏紬鍙锋枃绔?/strong> 鈥?鐑偣绫汇€佸共璐х被銆佹晠浜嬬被</li>
-<li><strong>SEO鍐呭</strong> 鈥?鍏抽敭璇嶄紭鍖栥€侀暱灏惧唴瀹广€佸厓鎻忚堪</li>
-<li><strong>绀句氦濯掍綋绯诲垪</strong> 鈥?鏈嬪弸鍦堛€佸皬绾功銆佸井鍗?/li>
-<li><strong>鏍囬搴?/strong> 鈥?楂樼偣鍑荤巼鏍囬鑷姩鐢熸垚</li>
-</ul>
-</div>
-
-<!-- 绮鹃€夋枃绔?-->
-
-<div class="footer">
-<p>&copy; 2026 <a href="https://tianshu.ink">澶╂灑娲炲療</a> 路 澶╂灑鎺㈢储 路 鏂囧瓧瀹為獙</p>
-<p class="note">浠?寮€濮?路 鐪熷疄璁板綍 路 鎸佺画鏇存柊</p>
-</div>
-</div>
-<script>(function(){var c=document.querySelector(".stars");if(!c)return;for(var i=0;i<80;i++){var s=document.createElement("div");s.className="star";s.style.left=(Math.random()*100)+"%";s.style.top=(Math.random()*100)+"%";s.style.animationDelay=(Math.random()*4)+"s";s.style.width=(Math.random()*2+1)+"px";c.appendChild(s);}})();</script>
-</body>
-</html>
+<a href="index.html" class="back">← 返回首页</a>
+<h1>小说 · 文案 · 日志 — AI文字创作实验</h1>
+<div class="subtitle">天枢探索 — AI文字创作实验</div><div class="card"><h3>📘 AI小说创作</h3><p>输入主角名和风格 · AI自动生成完整章节</p><p>都市逆袭 · 战神归来 · 修真世界 · 动漫</p><span class="tag">开始使用 →</span></div><div class="card"><h3>📝 AI文案写作</h3><p>产品文案 · 营销文案 · 公众号文章</p><p>短视频脚本 · SEO内容 · 社交标题</p><span class="tag">开始使用 →</span></div><div class="card"><h3>📋 AI文档助手</h3><p>AI写作 · 文案生成 · 智能校对</p><p>高效产出 · 一键优化</p><span class="tag">开始使用 →</span></div>
+<div style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:#475569;text-align:center">✦ 天枢宇宙 · 天枢探索 ✦<br><span style="font-size:10px">🤖 内容定期更新</span></div></div></body></html>

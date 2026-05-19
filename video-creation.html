@@ -1,165 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>瑙嗛瀹為獙 鈥?澶╂灑鎺㈢储</title>
-<meta name="description" content="澶╂灑鎺㈢储 瑙嗛瀹為獙锛欰I瑙嗛銆佸姩婕€侀厤闊炽€佸墽鏈敓鎴愶紝澶氭ā鎬佸垱浣滃疄楠屻€?>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#080c18;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;position:relative;overflow-x:hidden;min-height:100vh}
-/* bg handled by .stars div */
-.container{max-width:800px;margin:0 auto;padding:0 24px}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid rgba(139,92,246,0.2)}
-.nav-brand{font-size:20px;font-weight:700;letter-spacing:2px;background:linear-gradient(90deg,#818cf8,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links{display:flex;gap:16px;align-items:center}
-.nav-links a{color:#94a3b8;text-decoration:none;font-size:12px}
-.nav-links a:hover{color:#818cf8}
-.back-link{display:inline-block;margin:20px 0;color:#818cf8;text-decoration:none;font-size:13px}
-.back-link:hover{opacity:0.8}
-.page-header{text-align:center;padding:8px 0 4px}
-.page-header h1{font-size:28px;font-weight:700;background:linear-gradient(90deg,#8B5CF6,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.subtitle{font-size:13px;color:#64748b;margin-bottom:24px;text-align:center}
-.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
-.cat-card{padding:28px 20px;border:1px solid rgba(139,92,246,0.12);border-radius:14px;text-decoration:none;color:inherit;transition:0.3s;background:rgba(139,92,246,0.02);text-align:center}
-.cat-card:hover{border-color:#8B5CF6;transform:translateY(-3px);box-shadow:0 0 24px rgba(139,92,246,0.06)}
-.cat-card .icon{font-size:36px;margin-bottom:8px}
-.cat-card h3{font-size:16px;font-weight:600;color:#a78bfa;margin-bottom:6px;letter-spacing:1px}
-.cat-card p{font-size:12px;color:#64748b;line-height:1.6}
-.cat-card .enter{font-size:12px;color:#a78bfa;margin-top:10px}
-.section-title{font-size:16px;font-weight:600;color:#a78bfa;margin:32px 0 16px;padding-left:12px;border-left:3px solid #8B5CF6}
-.content-block{padding:24px;border:1px solid rgba(139,92,246,0.1);border-radius:14px;background:rgba(139,92,246,0.03);margin-bottom:20px}
-.content-block h3{font-size:16px;color:#a78bfa;margin-bottom:8px}
-.content-block p{font-size:13px;color:#94a3b8;line-height:1.8;margin-bottom:8px}
-.content-block li{font-size:13px;color:#64748b;line-height:1.8;margin-left:16px;padding:2px 0}
-.features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
-.feature-item{padding:16px 10px;border:1px solid rgba(139,92,246,0.08);border-radius:10px;text-align:center;background:rgba(139,92,246,0.02)}
-.feature-item .f-icon{font-size:24px;margin-bottom:4px}
-.feature-item .f-name{font-size:13px;color:#c8d6e5}
-.feature-item .f-desc{font-size:11px;color:#475569;margin-top:2px}
-.footer{margin-top:48px;padding:24px 0;text-align:center;border-top:1px solid rgba(139,92,246,0.1);font-size:12px;color:#475569}
-.footer a{color:#818cf8;text-decoration:none}
-.footer .note{font-size:11px;color:#334155;margin-top:4px}
-@media(max-width:640px){.cat-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:repeat(2,1fr)}}
-
-.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-.star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 4s infinite; }
-@keyframes twinkle { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
-
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>视频实验 — 天枢探索</title>
+<meta name="description" content="天枢探索 — AI视频创作实验">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0e1a;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:1.8;min-height:100vh}
+.container{max-width:720px;margin:0 auto;padding:40px 24px}
+a{color:#818cf8;text-decoration:none}
+a:hover{text-decoration:underline}
+h1{font-size:28px;margin-bottom:8px;background:linear-gradient(135deg,#3B82F6,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{font-size:14px;color:#64748b;margin-bottom:32px}
+.card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px;margin-bottom:16px}
+.card h3{color:#93c5fd;margin-bottom:8px;font-size:16px}
+.card p{font-size:14px;color:#94a3b8;margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:2px 10px;border-radius:20px;background:rgba(147,197,253,0.1);color:#93c5fd;margin-right:6px}
+.back{display:inline-block;margin-bottom:28px;color:#64748b;font-size:13px}</style>
 </head>
 <body>
-<div class="stars"></div>
 <div class="container">
-
-<div class="nav">
-<div class="nav-brand">鉁?澶╂灑鎺㈢储</div>
-<div class="nav-links">
-<a href="index.html">棣栭〉</a>
-<a href="text-creation.html">鏂囧瓧瀹為獙</a>
-<a href="https://tianshu.ink">澶╂灑娲炲療</a>
-</div>
-</div>
-
-<a href="index.html" class="back-link">鈫?杩斿洖棣栭〉</a>
-
-<div class="page-header">
-<h1>馃幀 瑙嗛瀹為獙</h1>
-</div>
-<p class="subtitle">鐭棰?路 鍔ㄦ极 路 閰嶉煶 鈥?AI澶氭ā鎬佸垱浣滃皾璇?/p>
-
-<div style="text-align:center;padding:4px 0 20px;">
-</div>
-
-<!-- 宸ュ叿鍗＄墖鍏ュ彛 -->
-<div class="cat-grid">
-
-<div class="cat-card" onclick="window.open('https://tianshu.ink/video-lab.html','_blank')" style="cursor:pointer">
-<div class="icon">馃幀</div>
-<h3>AI瑙嗛瀹為獙瀹?/h3>
-<p>鐭棰戝埗浣?路 AI鍓緫 路 瀛楀箷鐢熸垚<br>鑷姩閰嶉煶 路 鍦烘櫙鍒嗛暅 路 瑙嗛鐗规晥</p>
-<div class="enter">杩涘叆瀹為獙瀹?鈫?/div>
-</div>
-
-<div class="cat-card" onclick="document.getElementById('anime').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
-<div class="icon">馃帹</div>
-<h3>AI鍔ㄦ极宸ュ巶</h3>
-<p>鍔ㄦ极鍓ф湰 路 瑙掕壊璁惧畾 路 鍒嗛暅鎻忚堪<br>椋庢牸瀹氬埗 路 涓€閿敓鎴愬姩婕煭鍓?/p>
-<div class="enter">杩涘叆宸ュ巶 鈫?/div>
-</div>
-
-<div class="cat-card" onclick="document.getElementById('voice').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
-<div class="icon">馃帣锔?/div>
-<h3>AI閰嶉煶涓庡０闊?/h3>
-<p>AI璇煶鍚堟垚 路 澶氱闊宠壊<br>鑷劧鏈楄 路 鎯呮劅閰嶉煶 路 澶氳瑷€</p>
-<div class="enter">鎺㈢储 鈫?/div>
-</div>
-
-<div class="cat-card" onclick="window.open('https://tianshu.ink/video-lab.html','_blank')" style="cursor:pointer">
-<div class="icon">馃彸锔?/div>
-<h3>鐭棰戠垎娆炬ā鏉?/h3>
-<p>鎶栭煶 路 灏忕孩涔?路 瑙嗛鍙?br>AI鑷姩鐢熸垚鐖嗘鑴氭湰+鏍囬+鏍囩</p>
-<div class="enter">鏌ョ湅妯℃澘 鈫?/div>
-</div>
-
-</div>
-
-<!-- AI鍔ㄦ极宸ュ巶 璇︽儏鍖?-->
-<div id="anime" class="section-title">AI鍔ㄦ极宸ュ巶</div>
-<div class="content-block">
-<h3>涓€閿姩婕垱浣滄祦绋?/h3>
-<div class="features-grid">
-<div class="feature-item">
-<div class="f-icon">馃摑</div>
-<div class="f-name">杈撳叆璁惧畾</div>
-<div class="f-desc">涓昏鍚?椋庢牸+涓栫晫瑙?/div>
-</div>
-<div class="feature-item">
-<div class="f-icon">馃摉</div>
-<div class="f-name">鐢熸垚鍓ф湰</div>
-<div class="f-desc">AI鑷姩鍐欏畬鏁存晠浜?/div>
-</div>
-<div class="feature-item">
-<div class="f-icon">馃帹</div>
-<div class="f-name">鍒嗛暅鑴氭湰</div>
-<div class="f-desc">鍦烘櫙路闀滃ご路瀵圭櫧</div>
-</div>
-<div class="feature-item">
-<div class="f-icon">馃摛</div>
-<div class="f-name">瀵煎嚭鍒涗綔</div>
-<div class="f-desc">閰嶉煶+瑙嗛+瀛楀箷</div>
-</div>
-</div>
-<p style="font-size:12px;color:#475569;text-align:center;margin-top:8px;">馃挕 Pro鐗堣В閿佸叏閮ㄩ鏍?+ 鏃犻檺鐢熸垚</p>
-</div>
-
-<!-- AI閰嶉煶 璇︽儏鍖?-->
-<div id="voice" class="section-title">AI閰嶉煶涓庡０闊?/div>
-<div class="content-block">
-<h3>鏀寔鐨勯厤闊宠兘鍔?/h3>
-<ul>
-<li><strong>璇煶鍚堟垚</strong> 鈥?鏂囧瓧杞嚜鐒惰闊筹紝澶氱闊宠壊鍙€?/li>
-<li><strong>鎯呮劅閰嶉煶</strong> 鈥?鎰ゆ€掋€佹俯鏌斻€佹縺鏄傘€佹偛浼ょ瓑鎯呯华鎺у埗</li>
-<li><strong>澶氳瑷€鏀寔</strong> 鈥?涓枃銆佽嫳鏂囥€佹棩璇€侀煩璇?/li>
-<li><strong>瑙掕壊鍖哄垎</strong> 鈥?鍙欎簨鏃佺櫧 + 涓嶅悓瑙掕壊澹伴煶</li>
-<li><strong>璇€?闊宠皟</strong> 鈥?绮剧粏璋冭妭鍙戦煶椋庢牸</li>
-</ul>
-</div>
-
-<!-- 瑙嗛璇?-->
-<div class="section-title">鍒涗綔鎸囧紩</div>
-<div class="content-block">
-<h3>浠庢枃瀛楀埌瑙嗛鐨勫畬鏁撮摼璺?/h3>
-<p>馃摉 鏂囧瓧鍒涗綔 鈫?馃帹 鍔ㄦ极鍒嗛暅 鈫?馃帣锔?AI閰嶉煶 鈫?馃幀 瑙嗛鍚堟垚</p>
-<p style="margin-top:8px;font-size:12px;color:#475569;">鏂囧瓧鍒涗綔瀹屾垚鍚庯紝鍦ㄨ繖閲屽畬鎴愬姩鎬佸寲锛氫汉鐗╅厤闊炽€佸満鏅垎闀溿€佺壒鏁堟坊鍔犮€佸瓧骞曞帇鍒讹紝涓€鏉￠緳浠庢枃瀛楀埌瑙嗛銆?/p>
-</div>
-
-
-<div class="footer">
-<p>&copy; 2026 <a href="https://tianshu.ink">澶╂灑娲炲療</a> 路 澶╂灑鎺㈢储 路 瑙嗛瀹為獙</p>
-<p class="note">浠?寮€濮?路 鐪熷疄璁板綍 路 鎸佺画鏇存柊</p>
-</div>
-</div>
-<script>(function(){var c=document.querySelector(".stars");if(!c)return;for(var i=0;i<80;i++){var s=document.createElement("div");s.className="star";s.style.left=(Math.random()*100)+"%";s.style.top=(Math.random()*100)+"%";s.style.animationDelay=(Math.random()*4)+"s";s.style.width=(Math.random()*2+1)+"px";c.appendChild(s);}})();</script>
-</body>
-</html>
+<a href="index.html" class="back">← 返回首页</a>
+<h1>AI视频 · 自动剪辑 · 内容分发</h1>
+<div class="subtitle">天枢探索 — AI视频创作实验</div><div class="card"><h3>🎬 AI视频生成</h3><p>文字转视频 · AI配音 · 自动字幕</p><p>多模板支持 · 批量生成</p><span class="tag">开始使用 →</span></div><div class="card"><h3>✂️ 智能剪辑</h3><p>自动分割 · 场景识别 · 镜头切换</p><p>AI选片 · 一键成片</p><span class="tag">开始使用 →</span></div><div class="card"><h3>📡 内容分发</h3><p>多平台发布 · 定时推送 · 数据统计</p><p>TikTok · YouTube · 小红书</p><span class="tag">开始使用 →</span></div>
+<div style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:#475569;text-align:center">✦ 天枢宇宙 · 天枢探索 ✦<br><span style="font-size:10px">🤖 内容定期更新</span></div></div></body></html>
