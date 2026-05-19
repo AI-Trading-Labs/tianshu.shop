@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文字实验 — 天枢探索</title>
+<meta name="description" content="天枢探索 文字实验：AI小说创作、文案写作、创业日志，AI文字内容自动化实验。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050816;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;position:relative;overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(2px 2px at 31% 57%,rgba(255,255,255,0.19),transparent),radial-gradient(1px 1px at 21% 18%,rgba(255,255,255,0.26),transparent);z-index:-1;pointer-events:none}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid rgba(59,130,246,0.2)}
+.nav-brand{font-size:20px;font-weight:700;letter-spacing:2px;background:linear-gradient(90deg,#818cf8,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:16px;align-items:center}
+.nav-links a{color:#94a3b8;text-decoration:none;font-size:12px}
+.nav-links a:hover{color:#818cf8}
+.back-link{display:inline-block;margin:20px 0;color:#818cf8;text-decoration:none;font-size:13px}
+.back-link:hover{opacity:0.8}
+.page-header{text-align:center;padding:8px 0 4px}
+.page-header h1{font-size:28px;font-weight:700;background:linear-gradient(90deg,#3B82F6,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{font-size:13px;color:#64748b;margin-bottom:24px;text-align:center}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+.cat-card{padding:28px 20px;border:1px solid rgba(59,130,246,0.12);border-radius:14px;text-decoration:none;color:inherit;transition:0.3s;background:rgba(59,130,246,0.02);text-align:center}
+.cat-card:hover{border-color:#3B82F6;transform:translateY(-3px);box-shadow:0 0 24px rgba(59,130,246,0.06)}
+.cat-card .icon{font-size:36px;margin-bottom:8px}
+.cat-card h3{font-size:16px;font-weight:600;color:#60a5fa;margin-bottom:6px;letter-spacing:1px}
+.cat-card p{font-size:12px;color:#64748b;line-height:1.6}
+.cat-card .enter{font-size:12px;color:#60a5fa;margin-top:10px}
+.section-title{font-size:16px;font-weight:600;color:#94a3b8;margin:32px 0 16px;padding-left:12px;border-left:3px solid #3B82F6}
+.content-block{padding:24px;border:1px solid rgba(59,130,246,0.1);border-radius:14px;background:rgba(59,130,246,0.03);margin-bottom:20px}
+.content-block h3{font-size:16px;color:#60a5fa;margin-bottom:8px}
+.content-block p{font-size:13px;color:#94a3b8;line-height:1.8;margin-bottom:8px}
+.content-block li{font-size:13px;color:#64748b;line-height:1.8;margin-left:16px;padding:2px 0}
+.styles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.style-item{padding:16px 10px;border:1px solid rgba(59,130,246,0.08);border-radius:10px;text-align:center;background:rgba(59,130,246,0.02)}
+.style-item .s-icon{font-size:24px;margin-bottom:4px}
+.style-item .s-name{font-size:13px;color:#c8d6e5}
+.style-item .s-desc{font-size:11px;color:#475569;margin-top:2px}
+.article-list{display:grid;gap:10px;margin-bottom:24px}
+.article-item{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-radius:10px;border:1px solid rgba(59,130,246,0.08);text-decoration:none;color:inherit;transition:0.2s}
+.article-item:hover{border-color:rgba(59,130,246,0.25);background:rgba(59,130,246,0.03)}
+.article-item .a-title{font-size:14px;color:#e2e8f0}
+.article-item .a-date{font-size:11px;color:#475569}
+.footer{margin-top:48px;padding:24px 0;text-align:center;border-top:1px solid rgba(59,130,246,0.1);font-size:12px;color:#475569}
+.footer a{color:#818cf8;text-decoration:none}
+.footer .note{font-size:11px;color:#334155;margin-top:4px}
+@media(max-width:640px){.cat-grid{grid-template-columns:1fr}.styles-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="nav">
+<div class="nav-brand">✳ 天枢探索</div>
+<div class="nav-links">
+<a href="index.html">首页</a>
+<a href="video-creation.html">视频实验</a>
+<a href="https://tianshu.ink">天枢洞察</a>
+</div>
+</div>
+
+<a href="index.html" class="back-link">← 返回首页</a>
+
+<div class="page-header">
+<h1>📖 文字实验</h1>
+</div>
+<p class="subtitle">小说 · 文案 · 日志 — AI文字创作实验</p>
+
+<div style="text-align:center;padding:4px 0 20px;">
+<span style="display:inline-block;font-size:11px;padding:3px 12px;border-radius:4px;background:rgba(59,130,246,0.1);color:#818cf8;border:1px solid rgba(59,130,246,0.2);">🤖 本站内容由AI生成</span>
+</div>
+
+<!-- 工具卡片入口 -->
+<div class="cat-grid">
+
+<div class="cat-card" onclick="document.getElementById('novel').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
+<div class="icon">📝</div>
+<h3>AI小说创作</h3>
+<p>输入主角名和风格 · AI自动生成完整章节<br>都市逆袭 · 战神归来 · 修真世界 · 动漫</p>
+<div class="enter">开始写作 ↓</div>
+</div>
+
+<div class="cat-card" onclick="document.getElementById('writing').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
+<div class="icon">✍️</div>
+<h3>AI文案写作</h3>
+<p>产品文案 · 营销文案 · 公众号文章<br>短视频脚本 · SEO内容 · 社交标题</p>
+<div class="enter">开始写作 ↓</div>
+</div>
+
+<div class="cat-card" onclick="window.open('https://tianshu.ink/log.html','_blank')" style="cursor:pointer">
+<div class="icon">📄</div>
+<h3>AI会议纪要</h3>
+<p>录音转文字 · 智能摘要 · 待办提取<br>关键决议 · 行动项追踪</p>
+<div class="enter">查看模板 →</div>
+</div>
+
+<div class="cat-card" onclick="window.open('https://tianshu.ink/log.html','_blank')" style="cursor:pointer">
+<div class="icon">📝</div>
+<h3>创业日志</h3>
+<p>天枢AI创业实验记录<br>真实踩坑分享 · 迭代过程全公开</p>
+<div class="enter">阅读日志 →</div>
+</div>
+
+</div>
+
+<!-- AI小说创作 详情区 -->
+<div id="novel" class="section-title">AI小说创作</div>
+<div class="content-block">
+<h3>一键生成流程</h3>
+<div class="styles-grid">
+<div class="style-item">
+<div class="s-icon">📝</div>
+<div class="s-name">输入设定</div>
+<div class="s-desc">主角名+风格+类型</div>
+</div>
+<div class="style-item">
+<div class="s-icon">📖</div>
+<div class="s-name">生成小说</div>
+<div class="s-desc">AI自动写出完整章节</div>
+</div>
+<div class="style-item">
+<div class="s-icon">🎨</div>
+<div class="s-name">多种风格</div>
+<div class="s-desc">都市/战神/修真/动漫</div>
+</div>
+<div class="style-item">
+<div class="s-icon">📤</div>
+<div class="s-name">导出使用</div>
+<div class="s-desc">纯文本/格式化输出</div>
+</div>
+</div>
+</div>
+
+<div class="content-block">
+<h3>热门风格模板</h3>
+<div class="styles-grid">
+<div class="style-item">
+<div class="s-icon">🏙️</div>
+<div class="s-name">都市逆袭</div>
+<div class="s-desc">草根翻身·商战复仇</div>
+</div>
+<div class="style-item">
+<div class="s-icon">⚔️</div>
+<div class="s-name">战神归来</div>
+<div class="s-desc">无敌归来·热血爽文</div>
+</div>
+<div class="style-item">
+<div class="s-icon">🌄</div>
+<div class="s-name">修真世界</div>
+<div class="s-desc">修仙·玄幻·飞升</div>
+</div>
+<div class="style-item">
+<div class="s-icon">🎨</div>
+<div class="s-name">动漫风格</div>
+<div class="s-desc">日漫风·国漫风·轻小说</div>
+</div>
+</div>
+<p style="font-size:12px;color:#475569;text-align:center;margin-top:8px;">💡 Pro版解锁全部风格 + 无限生成</p>
+</div>
+
+<!-- AI文案写作 详情区 -->
+<div id="writing" class="section-title">AI文案写作</div>
+<div class="content-block">
+<h3>可生成的文案类型</h3>
+<ul>
+<li><strong>营销文案</strong> — 产品卖点、品牌故事、促销话术</li>
+<li><strong>短视频脚本</strong> — 口播、场景、字幕一体化</li>
+<li><strong>公众号文章</strong> — 热点类、干货类、故事类</li>
+<li><strong>SEO内容</strong> — 关键词优化、长尾内容、元描述</li>
+<li><strong>社交媒体系列</strong> — 朋友圈、小红书、微博</li>
+<li><strong>标题库</strong> — 高点击率标题自动生成</li>
+</ul>
+</div>
+
+<!-- 精选文章 -->
+<div class="section-title">精选内容</div>
+<div class="article-list">
+<a href="https://tianshu.ink/articles/2026-05-09-startup-day2.html" class="article-item">
+<span class="a-title">📌 创业日志 · Day2 — 法律合规整改与品牌拆分</span>
+<span class="a-date">2026-05-09</span>
+</a>
+<a href="https://tianshu.ink/articles/2026-05-08-startup-day1.html" class="article-item">
+<span class="a-title">📌 创业日志 · Day1 — 从零搭建AI交易研究平台</span>
+<span class="a-date">2026-05-08</span>
+</a>
+</div>
+
+<div class="footer">
+<p>&copy; 2026 <a href="https://tianshu.ink">天枢洞察</a> · 天枢探索 · 文字实验</p>
+<p class="note">从0开始 · 真实记录 · 持续更新</p>
+</div>
+</div>
+</body>
+</html>

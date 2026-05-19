@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天枢工坊 — 安装说明书</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050816;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:2;min-height:100vh}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:#050816;background-image:radial-gradient(3px 3px at 8% 12%, rgba(255,255,255,0.9), transparent),radial-gradient(3px 3px at 25% 60%, rgba(255,255,255,0.85), transparent);animation:twinkle 4s ease-in-out infinite alternate}
+@keyframes twinkle{0%{opacity:0.35}100%{opacity:1}}
+.container{max-width:720px;margin:0 auto;padding:0 24px}
+h1{font-size:28px;font-weight:700;text-align:center;padding:40px 0 8px;background:linear-gradient(90deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:3px}
+.sub{text-align:center;font-size:12px;color:#475569;margin-bottom:32px;letter-spacing:2px}
+hr{height:1px;background:linear-gradient(90deg,transparent,rgba(129,140,248,0.2),transparent);border:none;margin-bottom:32px}
+h2{font-size:18px;color:#a78bfa;margin:28px 0 12px;padding-left:10px;border-left:3px solid #a78bfa}
+h3{font-size:15px;color:#94a3b8;margin:20px 0 8px}
+p{font-size:14px;color:#c8d6e5;margin-bottom:10px}
+code{display:block;padding:12px 16px;border-radius:8px;background:rgba(0,0,0,0.3);color:#22D3EE;font-size:13px;margin:10px 0;font-family:"Consolas","Courier New",monospace;overflow-x:auto}
+.step{display:flex;gap:14px;margin:16px 0;padding:16px 20px;border-radius:10px;background:rgba(129,140,248,0.02);border:1px solid rgba(129,140,248,0.06)}
+.step .num{font-size:20px;font-weight:700;color:#818cf8;flex-shrink:0;width:32px;text-align:center}
+.step .content{flex:1}
+.step .content p{margin-bottom:4px}
+.highlight{padding:12px 16px;border-radius:8px;background:rgba(251,191,36,0.03);border:1px solid rgba(251,191,36,0.08);margin:14px 0}
+.highlight p{color:#fbbf24;font-size:13px}
+.back-link{display:inline-block;margin:28px 0;color:#818cf8;text-decoration:none;font-size:13px}
+.back-link:hover{text-decoration:underline}
+.footer{padding:32px 0;text-align:center;border-top:1px solid rgba(139,92,246,0.04);margin-top:60px}
+.foot-line{font-size:12px;color:#475569}
+@media(max-width:640px){.step{flex-direction:column;gap:6px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>天枢工坊安装说明书</h1>
+<p class="sub">T I A N S H U · I N S T A L L · G U I D E</p>
+<hr>
+
+<h2>🦞 OpenClaw 安装</h2>
+
+<h3>Windows 用户</h3>
+<div class="step">
+<div class="num">1</div>
+<div class="content"><p>点击下载 <strong>install-openclaw.bat</strong></p></div>
+</div>
+<div class="step">
+<div class="num">2</div>
+<div class="content"><p>找到下载的文件，<strong>右键 → 以管理员身份运行</strong></p></div>
+</div>
+<div class="step">
+<div class="num">3</div>
+<div class="content"><p>脚本会自动检测 Node.js → 安装 OpenClaw → 启动配置向导</p></div>
+</div>
+<div class="step">
+<div class="num">4</div>
+<div class="content"><p>按提示完成初始设置，即可开始使用</p></div>
+</div>
+
+<h3>Mac / Linux 用户</h3>
+<div class="step">
+<div class="num">1</div>
+<div class="content"><p>下载 <strong>install-openclaw.sh</strong></p></div>
+</div>
+<div class="step">
+<div class="num">2</div>
+<div class="content"><p>打开终端，进入下载目录</p></div>
+</div>
+<div class="step">
+<div class="num">3</div>
+<div class="content"><p>执行：<code>bash install-openclaw.sh</code></p></div>
+</div>
+
+<div class="highlight">
+<p>⚠️ 如果尚未安装 Node.js，Windows 版脚本会自动下载安装。Mac/Linux 请先前往 nodejs.org 安装 Node.js v18+。</p>
+</div>
+
+<hr style="margin:32px 0">
+
+<h2>🤖 Claude Code 安装</h2>
+
+<h3>Windows 用户</h3>
+<div class="step">
+<div class="num">1</div>
+<div class="content"><p>点击下载 <strong>install-claude-code.bat</strong></p></div>
+</div>
+<div class="step">
+<div class="num">2</div>
+<div class="content"><p>右键 → 以管理员身份运行</p></div>
+</div>
+<div class="step">
+<div class="num">3</div>
+<div class="content"><p>安装完成后，终端输入 <code>claude</code> 启动对话</p></div>
+</div>
+
+<div class="highlight">
+<p>💡 Claude Code 需要 Anthropic 账号及 API Key。安装完成后运行 claude 按提示登录即可。</p>
+</div>
+
+<hr style="margin:32px 0">
+
+<h2>❓ 常见问题</h2>
+
+<h3>Q：安装时提示"禁止运行脚本"？</h3>
+<p>Windows 可能会拦截未签名的脚本。右键点击 .bat 文件 → 属性 → 勾选"解除锁定" → 确定，再重新运行。</p>
+
+<h3>Q：安装速度很慢？</h3>
+<p>npm 包需要从外网下载，速度取决于网络环境。首次安装建议耐心等待 3-5 分钟。</p>
+
+<h3>Q：安装完成后怎么用？</h3>
+<p>在终端（CMD/PowerShell）输入 <code>openclaw -h</code> 查看全部命令。<code>openclaw setup</code> 可重新配置。</p>
+
+<h3>Q：安装包安全吗？</h3>
+<p>安装包是纯文本脚本，不包含任何可执行二进制文件，安全透明。OpenClaw 和 Claude Code 均为官方开源项目。</p>
+
+<a href="workshop.html" class="back-link">← 返回天枢工坊</a>
+
+<div class="footer">
+<div class="foot-line">天枢工坊 · 一键安装 · 简单省心</div>
+</div>
+
+</div>
+</body>
+</html>
