@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="zh-CN">
 
@@ -16,15 +16,13 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 
-body{background:#050816;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:1.8;min-height:100vh;overflow-x:hidden}
-
-
+body{background:#080c18;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:1.8;min-height:100vh;overflow-x:hidden}
 
 /* 星空背景 — 两层闪烁星星 */
 
 body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;
 
-background:#050816;
+background:#080c18;
 
 background-image:
 
@@ -112,15 +110,9 @@ animation:twinkle2 3s ease-in-out infinite alternate;
 
 @keyframes twinkle2{0%{opacity:0.4}100%{opacity:0.9}}
 
-
-
 .container{max-width:720px;margin:0 auto;padding:0 24px}
 
-
-
 /* 无导航栏 — 星空为背景 */
-
-
 
 /* 介绍区 */
 
@@ -128,13 +120,11 @@ animation:twinkle2 3s ease-in-out infinite alternate;
 
 .intro .emoji{font-size:48px;margin-bottom:12px}
 
-.intro h1{font-size:36px;font-weight:700;background:linear-gradient(90deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:3px}
+.intro h1{font-size:36px;font-weight:700;background:linear-gradient(135deg,#3B82F6,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:3px}
 
 .intro .tagline{font-size:12px;color:#475569;letter-spacing:3px;margin-top:8px}
 
 .intro p{font-size:14px;color:#94a3b8;margin-top:10px;line-height:1.8;max-width:500px;margin-left:auto;margin-right:auto}
-
-
 
 /* 状态标签 */
 
@@ -143,8 +133,6 @@ animation:twinkle2 3s ease-in-out infinite alternate;
 .tag{font-size:11px;padding:4px 14px;border-radius:20px;background:rgba(139,92,246,0.06);color:#818cf8;border:1px solid rgba(139,92,246,0.1);letter-spacing:0.5px}
 
 .tag.hot{border-color:rgba(236,72,153,0.15);color:#f472b6;background:rgba(236,72,153,0.06)}
-
-
 
 /* 实验卡片 */
 
@@ -190,8 +178,6 @@ animation:twinkle2 3s ease-in-out infinite alternate;
 
 .exp-card.novel .e-enter{color:#f472b6}
 
-
-
 /* 动态更新 */
 
 .section-title{font-size:14px;font-weight:600;color:#94a3b8;margin:8px 0 16px;padding-left:10px;border-left:2px solid #818cf8;letter-spacing:1px}
@@ -220,43 +206,35 @@ animation:twinkle2 3s ease-in-out infinite alternate;
 
 .update-content .u-meta{font-size:10px;color:#475569;margin-top:2px}
 
-
-
 /* 底部 */
 
-.footer{padding:32px 0 28px;margin-top:100px;text-align:center;border-top:1px solid rgba(139,92,246,0.04)}
+.footer{padding:24px 0 20px;margin-top:40px;text-align:center;border-top:1px solid rgba(139,92,246,0.04)}
 
 .foot-line{font-size:13px;color:#64748b;letter-spacing:1px;margin-bottom:4px}
 
 .foot-line .brand{color:#94a3b8}
 
-.foot-line a{color:#94a3b8;text-decoration:none;transition:0.2s}
+.foot-line a{color:#93c5fd;text-decoration:none;transition:0.2s}
 
-.foot-line a:hover{color:#818cf8}
+.foot-line a:hover{color:#60a5fa}
 
 .foot-note{font-size:10px;color:#94a3b8;margin-top:8px}
 
-
-
 .section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(129,140,248,0.15),transparent);margin:0 0 20px}
 
-
-
 @media(max-width:640px){.exp-grid{grid-template-columns:1fr}}
+
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 4s infinite; }
+@keyframes twinkle { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
 
 </style>
 
 </head>
 
 <body>
-
+<div class="stars"></div>
 <div class="container">
-
-
-
-
-
-
 
 <div class="intro">
 
@@ -270,8 +248,6 @@ animation:twinkle2 3s ease-in-out infinite alternate;
 
 </div>
 
-
-
 <div class="tags">
 
 <span class="tag">🔄 持续更新</span>
@@ -281,8 +257,6 @@ animation:twinkle2 3s ease-in-out infinite alternate;
 <span class="tag hot">🔥 小说创作中</span>
 
 </div>
-
-
 
 <div class="exp-grid">
 
@@ -344,57 +318,33 @@ animation:twinkle2 3s ease-in-out infinite alternate;
 
 </div>
 
-
-
-<div class="section-divider"></div>
-
-
-
 <div class="section-title">最新动态</div>
 
 <div class="updates">
 
 <div class="update-item">
 
-<div class="u-dot blue"></div>
-
-<div class="update-content"><div class="u-title">📌 创业日志 Day2 — 法律合规整改与品牌拆分</div><div class="u-meta">2026-05-09 · 天枢洞察/探索 品牌分离</div></div>
-
-</div>
-
-<div class="update-item">
-
-<div class="u-dot purple"></div>
-
-<div class="update-content"><div class="u-title">📌 创业日志 Day1 — 从零搭建AI研究平台</div><div class="u-meta">2026-05-08 · 系统上线</div></div>
-
-</div>
-
-<div class="update-item">
-
-<div class="u-dot pink"></div>
-
-<div class="update-content"><div class="u-title">📖 《天枢》— 连载至第一百零二章 · 每日更新</div><div class="u-meta">2026-05-11 · 已连载102章</div></div>
+<div class="update-content"><div class="u-title">📖 《天枢》— 连载至第三十七章 · 每日更新</div><div class="u-meta">2026-05-13 · 已连载37章</div></div>
 
 </div>
 
 </div>
 
 
-
-<div class="footer">
-
-<div class="foot-line"><span class="brand">✦</span> 天枢宇宙 · <a href="https://tianshu.ink">天枢洞察</a> <span class="brand">✦</span></div>
-
-<div class="foot-note">🤖 本站内容由AI生成 · 仅供学习参考</div>
+<div class="footer" style="text-align:center;padding:24px 0 12px;margin-top:40px;">
+<div class="foot-line" style="font-size:13px;color:#64748b;margin-bottom:4px;">
+<span class="brand" style="color:#3B82F6;">✦</span> <a href="https://dubhehub.com" style="color:#93c5fd;text-decoration:none;">dubhehub</a> · <a href="https://tianshu.ink" style="color:#93c5fd;text-decoration:none;">天枢洞察</a> <span class="brand" style="color:#3B82F6;">✦</span>
+</div>
+<div style="font-size:10px;color:#475569;margin-top:4px;">🤖 本站内容由AI生成 · 仅供学习参考</div>
+</div>
 
 </div>
 
-
-
 </div>
 
+<script>(function(){var c=document.querySelector(".stars");if(!c)return;for(var i=0;i<80;i++){var s=document.createElement("div");s.className="star";s.style.left=(Math.random()*100)+"%";s.style.top=(Math.random()*100)+"%";s.style.animationDelay=(Math.random()*4)+"s";s.style.width=(Math.random()*2+1)+"px";c.appendChild(s);}})();</script>
 </body>
 
 </html>
+
 

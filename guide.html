@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>天枢工坊 — 安装说明书</title>
+<title>澶╂灑宸ュ潑 鈥?瀹夎璇存槑涔?/title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#050816;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:2;min-height:100vh}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:#050816;background-image:radial-gradient(3px 3px at 8% 12%, rgba(255,255,255,0.9), transparent),radial-gradient(3px 3px at 25% 60%, rgba(255,255,255,0.85), transparent);animation:twinkle 4s ease-in-out infinite alternate}
+body{background:#080c18;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:2;min-height:100vh}
+/* bg handled by .stars div */
 @keyframes twinkle{0%{opacity:0.35}100%{opacity:1}}
 .container{max-width:720px;margin:0 auto;padding:0 24px}
 h1{font-size:28px;font-weight:700;text-align:center;padding:40px 0 8px;background:linear-gradient(90deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:3px}
@@ -28,97 +28,104 @@ code{display:block;padding:12px 16px;border-radius:8px;background:rgba(0,0,0,0.3
 .footer{padding:32px 0;text-align:center;border-top:1px solid rgba(139,92,246,0.04);margin-top:60px}
 .foot-line{font-size:12px;color:#475569}
 @media(max-width:640px){.step{flex-direction:column;gap:6px}}
+
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 4s infinite; }
+@keyframes twinkle { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
+
 </style>
 </head>
 <body>
+<div class="stars"></div>
 <div class="container">
 
-<h1>天枢工坊安装说明书</h1>
-<p class="sub">T I A N S H U · I N S T A L L · G U I D E</p>
+<h1>澶╂灑宸ュ潑瀹夎璇存槑涔?/h1>
+<p class="sub">T I A N S H U 路 I N S T A L L 路 G U I D E</p>
 <hr>
 
-<h2>🦞 OpenClaw 安装</h2>
+<h2>馃 OpenClaw 瀹夎</h2>
 
-<h3>Windows 用户</h3>
+<h3>Windows 鐢ㄦ埛</h3>
 <div class="step">
 <div class="num">1</div>
-<div class="content"><p>点击下载 <strong>install-openclaw.bat</strong></p></div>
+<div class="content"><p>鐐瑰嚮涓嬭浇 <strong>install-openclaw.bat</strong></p></div>
 </div>
 <div class="step">
 <div class="num">2</div>
-<div class="content"><p>找到下载的文件，<strong>右键 → 以管理员身份运行</strong></p></div>
+<div class="content"><p>鎵惧埌涓嬭浇鐨勬枃浠讹紝<strong>鍙抽敭 鈫?浠ョ鐞嗗憳韬唤杩愯</strong></p></div>
 </div>
 <div class="step">
 <div class="num">3</div>
-<div class="content"><p>脚本会自动检测 Node.js → 安装 OpenClaw → 启动配置向导</p></div>
+<div class="content"><p>鑴氭湰浼氳嚜鍔ㄦ娴?Node.js 鈫?瀹夎 OpenClaw 鈫?鍚姩閰嶇疆鍚戝</p></div>
 </div>
 <div class="step">
 <div class="num">4</div>
-<div class="content"><p>按提示完成初始设置，即可开始使用</p></div>
+<div class="content"><p>鎸夋彁绀哄畬鎴愬垵濮嬭缃紝鍗冲彲寮€濮嬩娇鐢?/p></div>
 </div>
 
-<h3>Mac / Linux 用户</h3>
+<h3>Mac / Linux 鐢ㄦ埛</h3>
 <div class="step">
 <div class="num">1</div>
-<div class="content"><p>下载 <strong>install-openclaw.sh</strong></p></div>
+<div class="content"><p>涓嬭浇 <strong>install-openclaw.sh</strong></p></div>
 </div>
 <div class="step">
 <div class="num">2</div>
-<div class="content"><p>打开终端，进入下载目录</p></div>
+<div class="content"><p>鎵撳紑缁堢锛岃繘鍏ヤ笅杞界洰褰?/p></div>
 </div>
 <div class="step">
 <div class="num">3</div>
-<div class="content"><p>执行：<code>bash install-openclaw.sh</code></p></div>
+<div class="content"><p>鎵ц锛?code>bash install-openclaw.sh</code></p></div>
 </div>
 
 <div class="highlight">
-<p>⚠️ 如果尚未安装 Node.js，Windows 版脚本会自动下载安装。Mac/Linux 请先前往 nodejs.org 安装 Node.js v18+。</p>
+<p>鈿狅笍 濡傛灉灏氭湭瀹夎 Node.js锛學indows 鐗堣剼鏈細鑷姩涓嬭浇瀹夎銆侻ac/Linux 璇峰厛鍓嶅線 nodejs.org 瀹夎 Node.js v18+銆?/p>
 </div>
 
 <hr style="margin:32px 0">
 
-<h2>🤖 Claude Code 安装</h2>
+<h2>馃 Claude Code 瀹夎</h2>
 
-<h3>Windows 用户</h3>
+<h3>Windows 鐢ㄦ埛</h3>
 <div class="step">
 <div class="num">1</div>
-<div class="content"><p>点击下载 <strong>install-claude-code.bat</strong></p></div>
+<div class="content"><p>鐐瑰嚮涓嬭浇 <strong>install-claude-code.bat</strong></p></div>
 </div>
 <div class="step">
 <div class="num">2</div>
-<div class="content"><p>右键 → 以管理员身份运行</p></div>
+<div class="content"><p>鍙抽敭 鈫?浠ョ鐞嗗憳韬唤杩愯</p></div>
 </div>
 <div class="step">
 <div class="num">3</div>
-<div class="content"><p>安装完成后，终端输入 <code>claude</code> 启动对话</p></div>
+<div class="content"><p>瀹夎瀹屾垚鍚庯紝缁堢杈撳叆 <code>claude</code> 鍚姩瀵硅瘽</p></div>
 </div>
 
 <div class="highlight">
-<p>💡 Claude Code 需要 Anthropic 账号及 API Key。安装完成后运行 claude 按提示登录即可。</p>
+<p>馃挕 Claude Code 闇€瑕?Anthropic 璐﹀彿鍙?API Key銆傚畨瑁呭畬鎴愬悗杩愯 claude 鎸夋彁绀虹櫥褰曞嵆鍙€?/p>
 </div>
 
 <hr style="margin:32px 0">
 
-<h2>❓ 常见问题</h2>
+<h2>鉂?甯歌闂</h2>
 
-<h3>Q：安装时提示"禁止运行脚本"？</h3>
-<p>Windows 可能会拦截未签名的脚本。右键点击 .bat 文件 → 属性 → 勾选"解除锁定" → 确定，再重新运行。</p>
+<h3>Q锛氬畨瑁呮椂鎻愮ず"绂佹杩愯鑴氭湰"锛?/h3>
+<p>Windows 鍙兘浼氭嫤鎴湭绛惧悕鐨勮剼鏈€傚彸閿偣鍑?.bat 鏂囦欢 鈫?灞炴€?鈫?鍕鹃€?瑙ｉ櫎閿佸畾" 鈫?纭畾锛屽啀閲嶆柊杩愯銆?/p>
 
-<h3>Q：安装速度很慢？</h3>
-<p>npm 包需要从外网下载，速度取决于网络环境。首次安装建议耐心等待 3-5 分钟。</p>
+<h3>Q锛氬畨瑁呴€熷害寰堟參锛?/h3>
+<p>npm 鍖呴渶瑕佷粠澶栫綉涓嬭浇锛岄€熷害鍙栧喅浜庣綉缁滅幆澧冦€傞娆″畨瑁呭缓璁€愬績绛夊緟 3-5 鍒嗛挓銆?/p>
 
-<h3>Q：安装完成后怎么用？</h3>
-<p>在终端（CMD/PowerShell）输入 <code>openclaw -h</code> 查看全部命令。<code>openclaw setup</code> 可重新配置。</p>
+<h3>Q锛氬畨瑁呭畬鎴愬悗鎬庝箞鐢紵</h3>
+<p>鍦ㄧ粓绔紙CMD/PowerShell锛夎緭鍏?<code>openclaw -h</code> 鏌ョ湅鍏ㄩ儴鍛戒护銆?code>openclaw setup</code> 鍙噸鏂伴厤缃€?/p>
 
-<h3>Q：安装包安全吗？</h3>
-<p>安装包是纯文本脚本，不包含任何可执行二进制文件，安全透明。OpenClaw 和 Claude Code 均为官方开源项目。</p>
+<h3>Q锛氬畨瑁呭寘瀹夊叏鍚楋紵</h3>
+<p>瀹夎鍖呮槸绾枃鏈剼鏈紝涓嶅寘鍚换浣曞彲鎵ц浜岃繘鍒舵枃浠讹紝瀹夊叏閫忔槑銆侽penClaw 鍜?Claude Code 鍧囦负瀹樻柟寮€婧愰」鐩€?/p>
 
-<a href="workshop.html" class="back-link">← 返回天枢工坊</a>
+<a href="workshop.html" class="back-link">鈫?杩斿洖澶╂灑宸ュ潑</a>
 
 <div class="footer">
-<div class="foot-line">天枢工坊 · 一键安装 · 简单省心</div>
+<div class="foot-line">澶╂灑宸ュ潑 路 涓€閿畨瑁?路 绠€鍗曠渷蹇?/div>
 </div>
 
 </div>
+<script>(function(){var c=document.querySelector(".stars");if(!c)return;for(var i=0;i<80;i++){var s=document.createElement("div");s.className="star";s.style.left=(Math.random()*100)+"%";s.style.top=(Math.random()*100)+"%";s.style.animationDelay=(Math.random()*4)+"s";s.style.width=(Math.random()*2+1)+"px";c.appendChild(s);}})();</script>
 </body>
 </html>

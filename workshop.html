@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>天枢工坊 — 一键工具部署</title>
-<meta name="description" content="天枢工坊 — AI开发工具一键安装包下载，OpenClaw/Claude Code 双击即装">
+<title>澶╂灑宸ュ潑 鈥?涓€閿伐鍏烽儴缃?/title>
+<meta name="description" content="澶╂灑宸ュ潑 鈥?AI寮€鍙戝伐鍏蜂竴閿畨瑁呭寘涓嬭浇锛孫penClaw/Claude Code 鍙屽嚮鍗宠">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#050816;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:1.8;min-height:100vh;overflow-x:hidden}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:#050816;background-image:radial-gradient(3px 3px at 8% 12%, rgba(255,255,255,0.95), transparent),radial-gradient(3px 3px at 25% 60%, rgba(255,255,255,0.9), transparent),radial-gradient(3px 3px at 55% 8%, rgba(255,255,255,0.95), transparent),radial-gradient(3px 3px at 72% 45%, rgba(255,255,255,0.85), transparent),radial-gradient(3px 3px at 90% 75%, rgba(255,255,255,0.9), transparent);animation:twinkle 4s ease-in-out infinite alternate}
+body{background:#080c18;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:1.8;min-height:100vh;overflow-x:hidden}
+/* bg handled by .stars div */
 @keyframes twinkle{0%{opacity:0.35}100%{opacity:1}}
 .container{max-width:800px;margin:0 auto;padding:0 24px}
 .back-link{display:inline-block;margin:24px 0 8px;color:#818cf8;text-decoration:none;font-size:13px}
@@ -45,97 +45,106 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-ind
 .footer{padding:32px 0 28px;margin-top:80px;text-align:center;border-top:1px solid rgba(139,92,246,0.04)}
 .foot-line{font-size:13px;color:#64748b;letter-spacing:1px;margin-bottom:4px}
 .foot-line .brand{color:#94a3b8}
-.foot-line a{color:#94a3b8;text-decoration:none}
-.foot-line a:hover{color:#818cf8}
+.foot-line a{color:#93c5fd;text-decoration:none}
+.foot-line a:hover{color:#60a5fa}
 .foot-note{font-size:10px;color:#94a3b8;margin-top:8px}
 @media(max-width:640px){.tool-card{padding:24px 18px}.header h1{font-size:28px}}
+
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 4s infinite; }
+@keyframes twinkle { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
+
 </style>
 </head>
 <body>
+<div class="stars"></div>
 <div class="container">
 
-<a href="index.html" class="back-link">← 返回天枢探索</a>
+<a href="index.html" class="back-link">鈫?杩斿洖澶╂灑鎺㈢储</a>
 
 <div class="header">
-<div class="icon">🔧</div>
-<h1>天枢工坊</h1>
-<div class="tagline">T O O L K I T · W O R K S H O P</div>
-<p>下载安装包，双击即可一键部署</p>
+<div class="icon">馃敡</div>
+<h1>澶╂灑宸ュ潑</h1>
+<div class="tagline">T O O L K I T 路 W O R K S H O P</div>
+<p>涓嬭浇瀹夎鍖咃紝鍙屽嚮鍗冲彲涓€閿儴缃?/p>
 </div>
 <hr class="header-divider">
 
 <div class="tool-section">
-<div class="section-title">🤖 AI 代理工具</div>
+<div class="section-title">馃 AI 浠ｇ悊宸ュ叿</div>
 
 <!-- OpenClaw -->
 <div class="tool-card">
 <div class="tc-header">
-<div class="tc-icon">🦞</div>
+<div class="tc-icon">馃</div>
 <div class="tc-info">
 <div class="tc-name">OpenClaw</div>
-<div class="tc-desc">你的第二个大脑 — 永久记忆、多工具调用、支持15+聊天渠道</div>
-<div class="tc-tags"><span>AI助手</span><span>跨平台</span><span>开源</span></div>
+<div class="tc-desc">浣犵殑绗簩涓ぇ鑴?鈥?姘镐箙璁板繂銆佸宸ュ叿璋冪敤銆佹敮鎸?5+鑱婂ぉ娓犻亾</div>
+<div class="tc-tags"><span>AI鍔╂墜</span><span>璺ㄥ钩鍙?/span><span>寮€婧?/span></div>
 </div>
 </div>
 <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-<a href="installers/install-openclaw.bat" class="dl-btn primary" download>⬇️ 下载 Windows 版</a>
-<a href="installers/install-openclaw.sh" class="dl-btn secondary" download>⬇️ Mac / Linux</a>
+<a href="installers/install-openclaw.bat" class="dl-btn primary" download>猬囷笍 涓嬭浇 Windows 鐗?/a>
+<a href="installers/install-openclaw.sh" class="dl-btn secondary" download>猬囷笍 Mac / Linux</a>
 </div>
 </div>
 
 <!-- Claude Code -->
 <div class="tool-card">
 <div class="tc-header">
-<div class="tc-icon">🤖</div>
+<div class="tc-icon">馃</div>
 <div class="tc-info">
 <div class="tc-name">Claude Code</div>
-<div class="tc-desc">Anthropic 官方开发助手 — 终端里的AI程序员</div>
-<div class="tc-tags"><span>AI编程</span><span>代码助手</span><span>CLI</span></div>
+<div class="tc-desc">Anthropic 瀹樻柟寮€鍙戝姪鎵?鈥?缁堢閲岀殑AI绋嬪簭鍛?/div>
+<div class="tc-tags"><span>AI缂栫▼</span><span>浠ｇ爜鍔╂墜</span><span>CLI</span></div>
 </div>
 </div>
 <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-<a href="installers/install-claude-code.bat" class="dl-btn primary" download>⬇️ 下载 Windows 版</a>
-<a href="installers/install-claude-code.sh" class="dl-btn secondary" download>🍎 下载 macOS 版</a>
+<a href="installers/install-claude-code.bat" class="dl-btn primary" download>猬囷笍 涓嬭浇 Windows 鐗?/a>
+<a href="installers/install-claude-code.sh" class="dl-btn secondary" download>馃崕 涓嬭浇 macOS 鐗?/a>
 </div>
 </div>
 
 <!-- Hermes -->
 <div class="tool-card">
 <div class="tc-header">
-<div class="tc-icon">🗿</div>
+<div class="tc-icon">馃椏</div>
 <div class="tc-info">
 <div class="tc-name">Hermes Agent</div>
-<div class="tc-desc">NousResearch 出品 — AI编码助手，工具编排、记忆系统、多平台消息集成</div>
-<div class="tc-tags"><span>AI编程</span><span>工具编排</span><span>多平台</span></div>
+<div class="tc-desc">NousResearch 鍑哄搧 鈥?AI缂栫爜鍔╂墜锛屽伐鍏风紪鎺掋€佽蹇嗙郴缁熴€佸骞冲彴娑堟伅闆嗘垚</div>
+<div class="tc-tags"><span>AI缂栫▼</span><span>宸ュ叿缂栨帓</span><span>澶氬钩鍙?/span></div>
 </div>
 </div>
 <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-<a href="installers/HermesAgent-Setup-Full-1.0.exe" class="dl-btn primary" download>⬇️ 下载 Windows 版</a>
-<a href="installers/install-hermes-linux.sh" class="dl-btn secondary" download>🐧 Linux 构建脚本</a>
-<a href="installers/install-hermes-macos.sh" class="dl-btn secondary" download>🍎 macOS 构建脚本</a>
+<a href="installers/HermesAgent-Setup-Full-1.0.exe" class="dl-btn primary" download>猬囷笍 涓嬭浇 Windows 鐗?/a>
+<a href="installers/install-hermes-linux.sh" class="dl-btn secondary" download>馃惂 Linux 鏋勫缓鑴氭湰</a>
+<a href="installers/install-hermes-macos.sh" class="dl-btn secondary" download>馃崕 macOS 鏋勫缓鑴氭湰</a>
 </div>
 </div>
 
 </div>
 
 <div class="tool-section">
-<div class="section-title">🛠️ 即将推出</div>
+<div class="section-title">馃洜锔?鍗冲皢鎺ㄥ嚭</div>
 <div class="coming-box">
-<div class="cb-icon">⏳</div>
-<p>GitHub CLI · VS Code 插件包 · Docker 安装包</p>
-<p style="margin-top:8px;font-size:11px;color:#334155;">更多工具正在准备中</p>
+<div class="cb-icon">鈴?/div>
+<p>GitHub CLI 路 VS Code 鎻掍欢鍖?路 Docker 瀹夎鍖?/p>
+<p style="margin-top:8px;font-size:11px;color:#334155;">鏇村宸ュ叿姝ｅ湪鍑嗗涓?/p>
 </div>
 </div>
 
+<a href="index.html" class="back-link" style="margin-top:20px;">鈫?杩斿洖澶╂灑鎺㈢储</a>
 
 
-<a href="index.html" class="back-link" style="margin-top:20px;">← 返回天枢探索</a>
-
-<div class="footer">
-<div class="foot-line"><span class="brand">✦</span> 天枢宇宙 · <a href="https://tianshu.ink">天枢洞察</a> <span class="brand">✦</span></div>
-<div class="foot-note">🤖 本站内容由AI生成 · 仅供学习参考</div>
+<div class="footer" style="text-align:center;padding:24px 0 12px;margin-top:40px;">
+<div class="foot-line" style="font-size:13px;color:#64748b;margin-bottom:4px;">
+<span class="brand" style="color:#3B82F6;">鉁?/span> <a href="https://dubhehub.com" style="color:#93c5fd;text-decoration:none;">dubhehub</a> 路 <a href="https://tianshu.ink" style="color:#93c5fd;text-decoration:none;">澶╂灑娲炲療</a> <span class="brand" style="color:#3B82F6;">鉁?/span>
+</div>
+<div style="font-size:10px;color:#475569;margin-top:4px;">馃 鏈珯鍐呭鐢盇I鐢熸垚 路 浠呬緵瀛︿範鍙傝€?/div>
+</div>
 </div>
 
 </div>
+<script>(function(){var c=document.querySelector(".stars");if(!c)return;for(var i=0;i<80;i++){var s=document.createElement("div");s.className="star";s.style.left=(Math.random()*100)+"%";s.style.top=(Math.random()*100)+"%";s.style.animationDelay=(Math.random()*4)+"s";s.style.width=(Math.random()*2+1)+"px";c.appendChild(s);}})();</script>
 </body>
 </html>

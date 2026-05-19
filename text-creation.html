@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>文字实验 — 天枢探索</title>
-<meta name="description" content="天枢探索 文字实验：AI小说创作、文案写作、创业日志，AI文字内容自动化实验。">
+<title>鏂囧瓧瀹為獙 鈥?澶╂灑鎺㈢储</title>
+<meta name="description" content="澶╂灑鎺㈢储 鏂囧瓧瀹為獙锛欰I灏忚鍒涗綔銆佹枃妗堝啓浣溿€侊紝AI鏂囧瓧鍐呭鑷姩鍖栧疄楠屻€?>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#050816;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;position:relative;overflow-x:hidden;min-height:100vh}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(2px 2px at 31% 57%,rgba(255,255,255,0.19),transparent),radial-gradient(1px 1px at 21% 18%,rgba(255,255,255,0.26),transparent);z-index:-1;pointer-events:none}
+body{background:#080c18;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;position:relative;overflow-x:hidden;min-height:100vh}
+/* bg handled by .stars div */
 .container{max-width:800px;margin:0 auto;padding:0 24px}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid rgba(59,130,246,0.2)}
 .nav-brand{font-size:20px;font-weight:700;letter-spacing:2px;background:linear-gradient(90deg,#818cf8,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -46,150 +46,145 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .footer a{color:#818cf8;text-decoration:none}
 .footer .note{font-size:11px;color:#334155;margin-top:4px}
 @media(max-width:640px){.cat-grid{grid-template-columns:1fr}.styles-grid{grid-template-columns:repeat(2,1fr)}}
+
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 4s infinite; }
+@keyframes twinkle { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
+
 </style>
 </head>
 <body>
+<div class="stars"></div>
 <div class="container">
 
 <div class="nav">
-<div class="nav-brand">✳ 天枢探索</div>
+<div class="nav-brand">鉁?澶╂灑鎺㈢储</div>
 <div class="nav-links">
-<a href="index.html">首页</a>
-<a href="video-creation.html">视频实验</a>
-<a href="https://tianshu.ink">天枢洞察</a>
+<a href="index.html">棣栭〉</a>
+<a href="video-creation.html">瑙嗛瀹為獙</a>
+<a href="https://tianshu.ink">澶╂灑娲炲療</a>
 </div>
 </div>
 
-<a href="index.html" class="back-link">← 返回首页</a>
+<a href="index.html" class="back-link">鈫?杩斿洖棣栭〉</a>
 
 <div class="page-header">
-<h1>📖 文字实验</h1>
+<h1>馃摉 鏂囧瓧瀹為獙</h1>
 </div>
-<p class="subtitle">小说 · 文案 · 日志 — AI文字创作实验</p>
+<p class="subtitle">灏忚 路 鏂囨 路 鏃ュ織 鈥?AI鏂囧瓧鍒涗綔瀹為獙</p>
 
 <div style="text-align:center;padding:4px 0 20px;">
-<span style="display:inline-block;font-size:11px;padding:3px 12px;border-radius:4px;background:rgba(59,130,246,0.1);color:#818cf8;border:1px solid rgba(59,130,246,0.2);">🤖 本站内容由AI生成</span>
 </div>
 
-<!-- 工具卡片入口 -->
+<!-- 宸ュ叿鍗＄墖鍏ュ彛 -->
 <div class="cat-grid">
 
 <div class="cat-card" onclick="document.getElementById('novel').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
-<div class="icon">📝</div>
-<h3>AI小说创作</h3>
-<p>输入主角名和风格 · AI自动生成完整章节<br>都市逆袭 · 战神归来 · 修真世界 · 动漫</p>
-<div class="enter">开始写作 ↓</div>
+<div class="icon">馃摑</div>
+<h3>AI灏忚鍒涗綔</h3>
+<p>杈撳叆涓昏鍚嶅拰椋庢牸 路 AI鑷姩鐢熸垚瀹屾暣绔犺妭<br>閮藉競閫嗚 路 鎴樼褰掓潵 路 淇湡涓栫晫 路 鍔ㄦ极</p>
+<div class="enter">寮€濮嬪啓浣?鈫?/div>
 </div>
 
 <div class="cat-card" onclick="document.getElementById('writing').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
-<div class="icon">✍️</div>
-<h3>AI文案写作</h3>
-<p>产品文案 · 营销文案 · 公众号文章<br>短视频脚本 · SEO内容 · 社交标题</p>
-<div class="enter">开始写作 ↓</div>
+<div class="icon">鉁嶏笍</div>
+<h3>AI鏂囨鍐欎綔</h3>
+<p>浜у搧鏂囨 路 钀ラ攢鏂囨 路 鍏紬鍙锋枃绔?br>鐭棰戣剼鏈?路 SEO鍐呭 路 绀句氦鏍囬</p>
+<div class="enter">寮€濮嬪啓浣?鈫?/div>
 </div>
 
-<div class="cat-card" onclick="window.open('https://tianshu.ink/log.html','_blank')" style="cursor:pointer">
-<div class="icon">📄</div>
-<h3>AI会议纪要</h3>
-<p>录音转文字 · 智能摘要 · 待办提取<br>关键决议 · 行动项追踪</p>
-<div class="enter">查看模板 →</div>
+<div class="cat-card" onclick="window.open('https://tianshu.shop','_blank')" style="cursor:pointer">
+<div class="icon">馃搫</div>
+<h3>AI鏂囨。鍔╂墜</h3>
+<p>AI鍐欎綔 路 鏂囨鐢熸垚 路 鏅鸿兘鏍″<br>楂樻晥浜у嚭 路 涓€閿紭鍖?/p>
+<div class="enter">鏌ョ湅妯℃澘 鈫?/div>
 </div>
 
-<div class="cat-card" onclick="window.open('https://tianshu.ink/log.html','_blank')" style="cursor:pointer">
-<div class="icon">📝</div>
-<h3>创业日志</h3>
-<p>天枢AI创业实验记录<br>真实踩坑分享 · 迭代过程全公开</p>
-<div class="enter">阅读日志 →</div>
+<div class="cat-card" onclick="window.open('https://tianshu.shop','_blank')" style="cursor:pointer">
+<div class="icon">馃摑</div>
+<h3></h3>
+<p>澶╂灑AI鍒涗笟瀹為獙璁板綍<br>鐪熷疄韪╁潙鍒嗕韩 路 杩唬杩囩▼鍏ㄥ叕寮€</p>
+<div class="enter">闃呰鏃ュ織 鈫?/div>
 </div>
 
 </div>
 
-<!-- AI小说创作 详情区 -->
-<div id="novel" class="section-title">AI小说创作</div>
+<!-- AI灏忚鍒涗綔 璇︽儏鍖?-->
+<div id="novel" class="section-title">AI灏忚鍒涗綔</div>
 <div class="content-block">
-<h3>一键生成流程</h3>
+<h3>涓€閿敓鎴愭祦绋?/h3>
 <div class="styles-grid">
 <div class="style-item">
-<div class="s-icon">📝</div>
-<div class="s-name">输入设定</div>
-<div class="s-desc">主角名+风格+类型</div>
+<div class="s-icon">馃摑</div>
+<div class="s-name">杈撳叆璁惧畾</div>
+<div class="s-desc">涓昏鍚?椋庢牸+绫诲瀷</div>
 </div>
 <div class="style-item">
-<div class="s-icon">📖</div>
-<div class="s-name">生成小说</div>
-<div class="s-desc">AI自动写出完整章节</div>
+<div class="s-icon">馃摉</div>
+<div class="s-name">鐢熸垚灏忚</div>
+<div class="s-desc">AI鑷姩鍐欏嚭瀹屾暣绔犺妭</div>
 </div>
 <div class="style-item">
-<div class="s-icon">🎨</div>
-<div class="s-name">多种风格</div>
-<div class="s-desc">都市/战神/修真/动漫</div>
+<div class="s-icon">馃帹</div>
+<div class="s-name">澶氱椋庢牸</div>
+<div class="s-desc">閮藉競/鎴樼/淇湡/鍔ㄦ极</div>
 </div>
 <div class="style-item">
-<div class="s-icon">📤</div>
-<div class="s-name">导出使用</div>
-<div class="s-desc">纯文本/格式化输出</div>
+<div class="s-icon">馃摛</div>
+<div class="s-name">瀵煎嚭浣跨敤</div>
+<div class="s-desc">绾枃鏈?鏍煎紡鍖栬緭鍑?/div>
 </div>
 </div>
 </div>
 
 <div class="content-block">
-<h3>热门风格模板</h3>
+<h3>鐑棬椋庢牸妯℃澘</h3>
 <div class="styles-grid">
 <div class="style-item">
-<div class="s-icon">🏙️</div>
-<div class="s-name">都市逆袭</div>
-<div class="s-desc">草根翻身·商战复仇</div>
+<div class="s-icon">馃彊锔?/div>
+<div class="s-name">閮藉競閫嗚</div>
+<div class="s-desc">鑽夋牴缈昏韩路鍟嗘垬澶嶄粐</div>
 </div>
 <div class="style-item">
-<div class="s-icon">⚔️</div>
-<div class="s-name">战神归来</div>
-<div class="s-desc">无敌归来·热血爽文</div>
+<div class="s-icon">鈿旓笍</div>
+<div class="s-name">鎴樼褰掓潵</div>
+<div class="s-desc">鏃犳晫褰掓潵路鐑鐖芥枃</div>
 </div>
 <div class="style-item">
-<div class="s-icon">🌄</div>
-<div class="s-name">修真世界</div>
-<div class="s-desc">修仙·玄幻·飞升</div>
+<div class="s-icon">馃寗</div>
+<div class="s-name">淇湡涓栫晫</div>
+<div class="s-desc">淇粰路鐜勫够路椋炲崌</div>
 </div>
 <div class="style-item">
-<div class="s-icon">🎨</div>
-<div class="s-name">动漫风格</div>
-<div class="s-desc">日漫风·国漫风·轻小说</div>
+<div class="s-icon">馃帹</div>
+<div class="s-name">鍔ㄦ极椋庢牸</div>
+<div class="s-desc">鏃ユ极椋幝峰浗婕路杞诲皬璇?/div>
 </div>
 </div>
-<p style="font-size:12px;color:#475569;text-align:center;margin-top:8px;">💡 Pro版解锁全部风格 + 无限生成</p>
+<p style="font-size:12px;color:#475569;text-align:center;margin-top:8px;">馃挕 Pro鐗堣В閿佸叏閮ㄩ鏍?+ 鏃犻檺鐢熸垚</p>
 </div>
 
-<!-- AI文案写作 详情区 -->
-<div id="writing" class="section-title">AI文案写作</div>
+<!-- AI鏂囨鍐欎綔 璇︽儏鍖?-->
+<div id="writing" class="section-title">AI鏂囨鍐欎綔</div>
 <div class="content-block">
-<h3>可生成的文案类型</h3>
+<h3>鍙敓鎴愮殑鏂囨绫诲瀷</h3>
 <ul>
-<li><strong>营销文案</strong> — 产品卖点、品牌故事、促销话术</li>
-<li><strong>短视频脚本</strong> — 口播、场景、字幕一体化</li>
-<li><strong>公众号文章</strong> — 热点类、干货类、故事类</li>
-<li><strong>SEO内容</strong> — 关键词优化、长尾内容、元描述</li>
-<li><strong>社交媒体系列</strong> — 朋友圈、小红书、微博</li>
-<li><strong>标题库</strong> — 高点击率标题自动生成</li>
+<li><strong>钀ラ攢鏂囨</strong> 鈥?浜у搧鍗栫偣銆佸搧鐗屾晠浜嬨€佷績閿€璇濇湳</li>
+<li><strong>鐭棰戣剼鏈?/strong> 鈥?鍙ｆ挱銆佸満鏅€佸瓧骞曚竴浣撳寲</li>
+<li><strong>鍏紬鍙锋枃绔?/strong> 鈥?鐑偣绫汇€佸共璐х被銆佹晠浜嬬被</li>
+<li><strong>SEO鍐呭</strong> 鈥?鍏抽敭璇嶄紭鍖栥€侀暱灏惧唴瀹广€佸厓鎻忚堪</li>
+<li><strong>绀句氦濯掍綋绯诲垪</strong> 鈥?鏈嬪弸鍦堛€佸皬绾功銆佸井鍗?/li>
+<li><strong>鏍囬搴?/strong> 鈥?楂樼偣鍑荤巼鏍囬鑷姩鐢熸垚</li>
 </ul>
 </div>
 
-<!-- 精选文章 -->
-<div class="section-title">精选内容</div>
-<div class="article-list">
-<a href="https://tianshu.ink/articles/2026-05-09-startup-day2.html" class="article-item">
-<span class="a-title">📌 创业日志 · Day2 — 法律合规整改与品牌拆分</span>
-<span class="a-date">2026-05-09</span>
-</a>
-<a href="https://tianshu.ink/articles/2026-05-08-startup-day1.html" class="article-item">
-<span class="a-title">📌 创业日志 · Day1 — 从零搭建AI交易研究平台</span>
-<span class="a-date">2026-05-08</span>
-</a>
-</div>
+<!-- 绮鹃€夋枃绔?-->
 
 <div class="footer">
-<p>&copy; 2026 <a href="https://tianshu.ink">天枢洞察</a> · 天枢探索 · 文字实验</p>
-<p class="note">从0开始 · 真实记录 · 持续更新</p>
+<p>&copy; 2026 <a href="https://tianshu.ink">澶╂灑娲炲療</a> 路 澶╂灑鎺㈢储 路 鏂囧瓧瀹為獙</p>
+<p class="note">浠?寮€濮?路 鐪熷疄璁板綍 路 鎸佺画鏇存柊</p>
 </div>
 </div>
+<script>(function(){var c=document.querySelector(".stars");if(!c)return;for(var i=0;i<80;i++){var s=document.createElement("div");s.className="star";s.style.left=(Math.random()*100)+"%";s.style.top=(Math.random()*100)+"%";s.style.animationDelay=(Math.random()*4)+"s";s.style.width=(Math.random()*2+1)+"px";c.appendChild(s);}})();</script>
 </body>
 </html>

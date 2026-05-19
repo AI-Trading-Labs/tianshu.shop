@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>视频实验 — 天枢探索</title>
-<meta name="description" content="天枢探索 视频实验：AI视频、动漫、配音、剧本生成，多模态创作实验。">
+<title>瑙嗛瀹為獙 鈥?澶╂灑鎺㈢储</title>
+<meta name="description" content="澶╂灑鎺㈢储 瑙嗛瀹為獙锛欰I瑙嗛銆佸姩婕€侀厤闊炽€佸墽鏈敓鎴愶紝澶氭ā鎬佸垱浣滃疄楠屻€?>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#050816;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;position:relative;overflow-x:hidden;min-height:100vh}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(2px 2px at 31% 57%,rgba(255,255,255,0.19),transparent),radial-gradient(1px 1px at 21% 18%,rgba(255,255,255,0.26),transparent);z-index:-1;pointer-events:none}
+body{background:#080c18;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;position:relative;overflow-x:hidden;min-height:100vh}
+/* bg handled by .stars div */
 .container{max-width:800px;margin:0 auto;padding:0 24px}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid rgba(139,92,246,0.2)}
 .nav-brand{font-size:20px;font-weight:700;letter-spacing:2px;background:linear-gradient(90deg,#818cf8,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -41,118 +41,125 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .footer a{color:#818cf8;text-decoration:none}
 .footer .note{font-size:11px;color:#334155;margin-top:4px}
 @media(max-width:640px){.cat-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:repeat(2,1fr)}}
+
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 4s infinite; }
+@keyframes twinkle { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
+
 </style>
 </head>
 <body>
+<div class="stars"></div>
 <div class="container">
 
 <div class="nav">
-<div class="nav-brand">✳ 天枢探索</div>
+<div class="nav-brand">鉁?澶╂灑鎺㈢储</div>
 <div class="nav-links">
-<a href="index.html">首页</a>
-<a href="text-creation.html">文字实验</a>
-<a href="https://tianshu.ink">天枢洞察</a>
+<a href="index.html">棣栭〉</a>
+<a href="text-creation.html">鏂囧瓧瀹為獙</a>
+<a href="https://tianshu.ink">澶╂灑娲炲療</a>
 </div>
 </div>
 
-<a href="index.html" class="back-link">← 返回首页</a>
+<a href="index.html" class="back-link">鈫?杩斿洖棣栭〉</a>
 
 <div class="page-header">
-<h1>🎬 视频实验</h1>
+<h1>馃幀 瑙嗛瀹為獙</h1>
 </div>
-<p class="subtitle">短视频 · 动漫 · 配音 — AI多模态创作尝试</p>
+<p class="subtitle">鐭棰?路 鍔ㄦ极 路 閰嶉煶 鈥?AI澶氭ā鎬佸垱浣滃皾璇?/p>
 
 <div style="text-align:center;padding:4px 0 20px;">
-<span style="display:inline-block;font-size:11px;padding:3px 12px;border-radius:4px;background:rgba(139,92,246,0.1);color:#818cf8;border:1px solid rgba(139,92,246,0.2);">🤖 本站内容由AI生成</span>
 </div>
 
-<!-- 工具卡片入口 -->
+<!-- 宸ュ叿鍗＄墖鍏ュ彛 -->
 <div class="cat-grid">
 
 <div class="cat-card" onclick="window.open('https://tianshu.ink/video-lab.html','_blank')" style="cursor:pointer">
-<div class="icon">🎬</div>
-<h3>AI视频实验室</h3>
-<p>短视频制作 · AI剪辑 · 字幕生成<br>自动配音 · 场景分镜 · 视频特效</p>
-<div class="enter">进入实验室 →</div>
+<div class="icon">馃幀</div>
+<h3>AI瑙嗛瀹為獙瀹?/h3>
+<p>鐭棰戝埗浣?路 AI鍓緫 路 瀛楀箷鐢熸垚<br>鑷姩閰嶉煶 路 鍦烘櫙鍒嗛暅 路 瑙嗛鐗规晥</p>
+<div class="enter">杩涘叆瀹為獙瀹?鈫?/div>
 </div>
 
 <div class="cat-card" onclick="document.getElementById('anime').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
-<div class="icon">🎨</div>
-<h3>AI动漫工厂</h3>
-<p>动漫剧本 · 角色设定 · 分镜描述<br>风格定制 · 一键生成动漫短剧</p>
-<div class="enter">进入工厂 ↓</div>
+<div class="icon">馃帹</div>
+<h3>AI鍔ㄦ极宸ュ巶</h3>
+<p>鍔ㄦ极鍓ф湰 路 瑙掕壊璁惧畾 路 鍒嗛暅鎻忚堪<br>椋庢牸瀹氬埗 路 涓€閿敓鎴愬姩婕煭鍓?/p>
+<div class="enter">杩涘叆宸ュ巶 鈫?/div>
 </div>
 
 <div class="cat-card" onclick="document.getElementById('voice').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
-<div class="icon">🎙️</div>
-<h3>AI配音与声音</h3>
-<p>AI语音合成 · 多种音色<br>自然朗读 · 情感配音 · 多语言</p>
-<div class="enter">探索 ↓</div>
+<div class="icon">馃帣锔?/div>
+<h3>AI閰嶉煶涓庡０闊?/h3>
+<p>AI璇煶鍚堟垚 路 澶氱闊宠壊<br>鑷劧鏈楄 路 鎯呮劅閰嶉煶 路 澶氳瑷€</p>
+<div class="enter">鎺㈢储 鈫?/div>
 </div>
 
 <div class="cat-card" onclick="window.open('https://tianshu.ink/video-lab.html','_blank')" style="cursor:pointer">
-<div class="icon">🏳️</div>
-<h3>短视频爆款模板</h3>
-<p>抖音 · 小红书 · 视频号<br>AI自动生成爆款脚本+标题+标签</p>
-<div class="enter">查看模板 →</div>
+<div class="icon">馃彸锔?/div>
+<h3>鐭棰戠垎娆炬ā鏉?/h3>
+<p>鎶栭煶 路 灏忕孩涔?路 瑙嗛鍙?br>AI鑷姩鐢熸垚鐖嗘鑴氭湰+鏍囬+鏍囩</p>
+<div class="enter">鏌ョ湅妯℃澘 鈫?/div>
 </div>
 
 </div>
 
-<!-- AI动漫工厂 详情区 -->
-<div id="anime" class="section-title">AI动漫工厂</div>
+<!-- AI鍔ㄦ极宸ュ巶 璇︽儏鍖?-->
+<div id="anime" class="section-title">AI鍔ㄦ极宸ュ巶</div>
 <div class="content-block">
-<h3>一键动漫创作流程</h3>
+<h3>涓€閿姩婕垱浣滄祦绋?/h3>
 <div class="features-grid">
 <div class="feature-item">
-<div class="f-icon">📝</div>
-<div class="f-name">输入设定</div>
-<div class="f-desc">主角名+风格+世界观</div>
+<div class="f-icon">馃摑</div>
+<div class="f-name">杈撳叆璁惧畾</div>
+<div class="f-desc">涓昏鍚?椋庢牸+涓栫晫瑙?/div>
 </div>
 <div class="feature-item">
-<div class="f-icon">📖</div>
-<div class="f-name">生成剧本</div>
-<div class="f-desc">AI自动写完整故事</div>
+<div class="f-icon">馃摉</div>
+<div class="f-name">鐢熸垚鍓ф湰</div>
+<div class="f-desc">AI鑷姩鍐欏畬鏁存晠浜?/div>
 </div>
 <div class="feature-item">
-<div class="f-icon">🎨</div>
-<div class="f-name">分镜脚本</div>
-<div class="f-desc">场景·镜头·对白</div>
+<div class="f-icon">馃帹</div>
+<div class="f-name">鍒嗛暅鑴氭湰</div>
+<div class="f-desc">鍦烘櫙路闀滃ご路瀵圭櫧</div>
 </div>
 <div class="feature-item">
-<div class="f-icon">📤</div>
-<div class="f-name">导出创作</div>
-<div class="f-desc">配音+视频+字幕</div>
+<div class="f-icon">馃摛</div>
+<div class="f-name">瀵煎嚭鍒涗綔</div>
+<div class="f-desc">閰嶉煶+瑙嗛+瀛楀箷</div>
 </div>
 </div>
-<p style="font-size:12px;color:#475569;text-align:center;margin-top:8px;">💡 Pro版解锁全部风格 + 无限生成</p>
+<p style="font-size:12px;color:#475569;text-align:center;margin-top:8px;">馃挕 Pro鐗堣В閿佸叏閮ㄩ鏍?+ 鏃犻檺鐢熸垚</p>
 </div>
 
-<!-- AI配音 详情区 -->
-<div id="voice" class="section-title">AI配音与声音</div>
+<!-- AI閰嶉煶 璇︽儏鍖?-->
+<div id="voice" class="section-title">AI閰嶉煶涓庡０闊?/div>
 <div class="content-block">
-<h3>支持的配音能力</h3>
+<h3>鏀寔鐨勯厤闊宠兘鍔?/h3>
 <ul>
-<li><strong>语音合成</strong> — 文字转自然语音，多种音色可选</li>
-<li><strong>情感配音</strong> — 愤怒、温柔、激昂、悲伤等情绪控制</li>
-<li><strong>多语言支持</strong> — 中文、英文、日语、韩语</li>
-<li><strong>角色区分</strong> — 叙事旁白 + 不同角色声音</li>
-<li><strong>语速/音调</strong> — 精细调节发音风格</li>
+<li><strong>璇煶鍚堟垚</strong> 鈥?鏂囧瓧杞嚜鐒惰闊筹紝澶氱闊宠壊鍙€?/li>
+<li><strong>鎯呮劅閰嶉煶</strong> 鈥?鎰ゆ€掋€佹俯鏌斻€佹縺鏄傘€佹偛浼ょ瓑鎯呯华鎺у埗</li>
+<li><strong>澶氳瑷€鏀寔</strong> 鈥?涓枃銆佽嫳鏂囥€佹棩璇€侀煩璇?/li>
+<li><strong>瑙掕壊鍖哄垎</strong> 鈥?鍙欎簨鏃佺櫧 + 涓嶅悓瑙掕壊澹伴煶</li>
+<li><strong>璇€?闊宠皟</strong> 鈥?绮剧粏璋冭妭鍙戦煶椋庢牸</li>
 </ul>
 </div>
 
-<!-- 视频说 -->
-<div class="section-title">创作指引</div>
+<!-- 瑙嗛璇?-->
+<div class="section-title">鍒涗綔鎸囧紩</div>
 <div class="content-block">
-<h3>从文字到视频的完整链路</h3>
-<p>📖 文字创作 → 🎨 动漫分镜 → 🎙️ AI配音 → 🎬 视频合成</p>
-<p style="margin-top:8px;font-size:12px;color:#475569;">文字创作完成后，在这里完成动态化：人物配音、场景分镜、特效添加、字幕压制，一条龙从文字到视频。</p>
+<h3>浠庢枃瀛楀埌瑙嗛鐨勫畬鏁撮摼璺?/h3>
+<p>馃摉 鏂囧瓧鍒涗綔 鈫?馃帹 鍔ㄦ极鍒嗛暅 鈫?馃帣锔?AI閰嶉煶 鈫?馃幀 瑙嗛鍚堟垚</p>
+<p style="margin-top:8px;font-size:12px;color:#475569;">鏂囧瓧鍒涗綔瀹屾垚鍚庯紝鍦ㄨ繖閲屽畬鎴愬姩鎬佸寲锛氫汉鐗╅厤闊炽€佸満鏅垎闀溿€佺壒鏁堟坊鍔犮€佸瓧骞曞帇鍒讹紝涓€鏉￠緳浠庢枃瀛楀埌瑙嗛銆?/p>
 </div>
 
+
 <div class="footer">
-<p>&copy; 2026 <a href="https://tianshu.ink">天枢洞察</a> · 天枢探索 · 视频实验</p>
-<p class="note">从0开始 · 真实记录 · 持续更新</p>
+<p>&copy; 2026 <a href="https://tianshu.ink">澶╂灑娲炲療</a> 路 澶╂灑鎺㈢储 路 瑙嗛瀹為獙</p>
+<p class="note">浠?寮€濮?路 鐪熷疄璁板綍 路 鎸佺画鏇存柊</p>
 </div>
 </div>
+<script>(function(){var c=document.querySelector(".stars");if(!c)return;for(var i=0;i<80;i++){var s=document.createElement("div");s.className="star";s.style.left=(Math.random()*100)+"%";s.style.top=(Math.random()*100)+"%";s.style.animationDelay=(Math.random()*4)+"s";s.style.width=(Math.random()*2+1)+"px";c.appendChild(s);}})();</script>
 </body>
 </html>
