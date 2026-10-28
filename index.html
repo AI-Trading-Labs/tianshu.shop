@@ -1,350 +1,122 @@
-﻿<!DOCTYPE html>
-
+<!doctype html>
 <html lang="zh-CN">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>天枢探索 — AI内容实验记录</title>
-
-<meta name="description" content="天枢探索 — 一个普通人用AI搭建内容自动化系统的实验记录">
-
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<title>天枢 · 探索</title>
+<meta name="description" content="天枢·探索：AI 新世界终极目标的计划树。">
 <style>
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{background:#080c18;color:#c8d6e5;font-family:-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:1.8;min-height:100vh;overflow-x:hidden}
-
-/* 星空背景 — 两层闪烁星星 */
-
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;
-
-background:#080c18;
-
-background-image:
-
-radial-gradient(3px 3px at 12% 18%, rgba(255,255,255,0.95), transparent),
-
-radial-gradient(3px 3px at 35% 65%, rgba(255,255,255,0.9), transparent),
-
-radial-gradient(3px 3px at 68% 10%, rgba(255,255,255,0.95), transparent),
-
-radial-gradient(3px 3px at 78% 50%, rgba(255,255,255,0.85), transparent),
-
-radial-gradient(3px 3px at 92% 82%, rgba(255,255,255,0.9), transparent),
-
-radial-gradient(3px 3px at 8% 85%, rgba(255,255,255,0.95), transparent),
-
-radial-gradient(3px 3px at 55% 92%, rgba(255,255,255,0.85), transparent),
-
-radial-gradient(3px 3px at 85% 28%, rgba(255,255,255,0.9), transparent),
-
-radial-gradient(2px 2px at 22% 42%, rgba(255,255,255,0.75), transparent),
-
-radial-gradient(2px 2px at 45% 20%, rgba(255,255,255,0.8), transparent),
-
-radial-gradient(2px 2px at 58% 72%, rgba(255,255,255,0.75), transparent),
-
-radial-gradient(2px 2px at 88% 60%, rgba(255,255,255,0.8), transparent),
-
-radial-gradient(2px 2px at 38% 52%, rgba(255,255,255,0.75), transparent),
-
-radial-gradient(2px 2px at 72% 38%, rgba(255,255,255,0.8), transparent),
-
-radial-gradient(2px 2px at 10% 72%, rgba(255,255,255,0.75), transparent),
-
-radial-gradient(2px 2px at 95% 15%, rgba(255,255,255,0.8), transparent),
-
-radial-gradient(2px 2px at 48% 5%, rgba(255,255,255,0.75), transparent),
-
-radial-gradient(2px 2px at 65% 82%, rgba(255,255,255,0.8), transparent);
-
-animation:twinkle1 4s ease-in-out infinite alternate;
-
-}
-
-@keyframes twinkle1{0%{opacity:0.35}100%{opacity:1}}
-
-body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;
-
-background:
-
-radial-gradient(1px 1px at 5% 8%, rgba(255,255,255,0.45), transparent),
-
-radial-gradient(1px 1px at 18% 55%, rgba(255,255,255,0.5), transparent),
-
-radial-gradient(1px 1px at 32% 28%, rgba(255,255,255,0.45), transparent),
-
-radial-gradient(1px 1px at 50% 45%, rgba(255,255,255,0.5), transparent),
-
-radial-gradient(1px 1px at 62% 15%, rgba(255,255,255,0.45), transparent),
-
-radial-gradient(1px 1px at 75% 35%, rgba(255,255,255,0.5), transparent),
-
-radial-gradient(1px 1px at 82% 68%, rgba(255,255,255,0.45), transparent),
-
-radial-gradient(1px 1px at 42% 88%, rgba(255,255,255,0.5), transparent),
-
-radial-gradient(1px 1px at 28% 95%, rgba(255,255,255,0.45), transparent),
-
-radial-gradient(1px 1px at 15% 30%, rgba(255,255,255,0.5), transparent),
-
-radial-gradient(1px 1px at 90% 42%, rgba(255,255,255,0.45), transparent),
-
-radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.5), transparent),
-
-radial-gradient(1px 1px at 70% 5%, rgba(255,255,255,0.45), transparent),
-
-radial-gradient(1px 1px at 60% 50%, rgba(255,255,255,0.5), transparent),
-
-radial-gradient(1px 1px at 40% 40%, rgba(255,255,255,0.45), transparent),
-
-radial-gradient(1px 1px at 98% 88%, rgba(255,255,255,0.5), transparent);
-
-animation:twinkle2 3s ease-in-out infinite alternate;
-
-}
-
-@keyframes twinkle2{0%{opacity:0.4}100%{opacity:0.9}}
-
-.container{max-width:720px;margin:0 auto;padding:0 24px}
-
-/* 无导航栏 — 星空为背景 */
-
-/* 介绍区 */
-
-.intro{text-align:center;padding:48px 20px 28px}
-
-.intro .emoji{font-size:48px;margin-bottom:12px}
-
-.intro h1{font-size:36px;font-weight:700;background:linear-gradient(135deg,#3B82F6,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:3px}
-
-.intro .tagline{font-size:12px;color:#475569;letter-spacing:3px;margin-top:8px}
-
-.intro p{font-size:14px;color:#94a3b8;margin-top:10px;line-height:1.8;max-width:500px;margin-left:auto;margin-right:auto}
-
-/* 状态标签 */
-
-.tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:32px}
-
-.tag{font-size:11px;padding:4px 14px;border-radius:20px;background:rgba(139,92,246,0.06);color:#818cf8;border:1px solid rgba(139,92,246,0.1);letter-spacing:0.5px}
-
-.tag.hot{border-color:rgba(236,72,153,0.15);color:#f472b6;background:rgba(236,72,153,0.06)}
-
-/* 实验卡片 */
-
-.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
-
-.exp-card{border-radius:16px;padding:36px 24px;text-decoration:none;color:inherit;transition:0.3s;display:flex;flex-direction:column;align-items:center;text-align:center;background:rgba(255,255,255,0.02);border:1px solid rgba(129,140,248,0.08);backdrop-filter:blur(4px)}
-
-.exp-card:hover{transform:translateY(-4px)}
-
-.exp-card.write:hover{border-color:rgba(59,130,246,0.3);box-shadow:0 0 30px rgba(59,130,246,0.06)}
-
-.exp-card.video:hover{border-color:rgba(139,92,246,0.3);box-shadow:0 0 30px rgba(139,92,246,0.06)}
-
-.exp-card.tool:hover{border-color:rgba(34,211,238,0.3);box-shadow:0 0 30px rgba(34,211,238,0.06)}
-
-.exp-card.novel:hover{border-color:rgba(244,114,182,0.3);box-shadow:0 0 30px rgba(244,114,182,0.06)}
-
-.exp-card.write .e-title{color:#60a5fa}
-
-.exp-card.video .e-title{color:#a78bfa}
-
-.exp-card.tool .e-title{color:#22D3EE}
-
-.exp-card.novel .e-title{color:#f472b6}
-
-.exp-card .e-icon{font-size:42px;margin-bottom:10px}
-
-.exp-card .e-title{font-size:19px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
-
-.exp-card .e-desc{font-size:12px;color:#64748b;line-height:1.7}
-
-.exp-card .e-tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-
-.exp-card .e-tags span{font-size:10px;padding:2px 10px;border-radius:12px;background:rgba(255,255,255,0.03);color:#475569;border:1px solid rgba(255,255,255,0.05)}
-
-.exp-card .e-enter{font-size:12px;margin-top:14px;font-weight:500;letter-spacing:1px}
-
-.exp-card.write .e-enter{color:#60a5fa}
-
-.exp-card.video .e-enter{color:#a78bfa}
-
-.exp-card.tool .e-enter{color:#22D3EE}
-
-.exp-card.novel .e-enter{color:#f472b6}
-
-/* 动态更新 */
-
-.section-title{font-size:14px;font-weight:600;color:#94a3b8;margin:8px 0 16px;padding-left:10px;border-left:2px solid #818cf8;letter-spacing:1px}
-
-.updates{border:1px solid rgba(139,92,246,0.05);border-radius:12px;padding:16px 20px;margin-bottom:24px;background:rgba(139,92,246,0.01)}
-
-.update-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
-
-.update-item:last-child{border-bottom:none;padding-bottom:0}
-
-.update-item:first-child{padding-top:0}
-
-.u-dot{width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0}
-
-.u-dot.blue{background:#3B82F6;box-shadow:0 0 4px rgba(59,130,246,0.5)}
-
-.u-dot.purple{background:#8B5CF6;box-shadow:0 0 4px rgba(139,92,246,0.5)}
-
-.u-dot.pink{background:#EC4899;box-shadow:0 0 4px rgba(236,72,153,0.5)}
-
-.update-content{flex:1}
-
-.update-content .u-title{font-size:13px;color:#c8d6e5}
-
-.update-content .u-title a{color:#818cf8;text-decoration:none}
-
-.update-content .u-meta{font-size:10px;color:#475569;margin-top:2px}
-
-/* 底部 */
-
-.footer{padding:24px 0 20px;margin-top:40px;text-align:center;border-top:1px solid rgba(139,92,246,0.04)}
-
-.foot-line{font-size:13px;color:#64748b;letter-spacing:1px;margin-bottom:4px}
-
-.foot-line .brand{color:#94a3b8}
-
-.foot-line a{color:#93c5fd;text-decoration:none;transition:0.2s}
-
-.foot-line a:hover{color:#60a5fa}
-
-.foot-note{font-size:10px;color:#94a3b8;margin-top:8px}
-
-.section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(129,140,248,0.15),transparent);margin:0 0 20px}
-
-@media(max-width:640px){.exp-grid{grid-template-columns:1fr}}
-
-.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-.star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 4s infinite; }
-@keyframes twinkle { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
-
+  :root{--bg:#080c18;--fg:#e0e6f0;--head:#f0f4ff;--muted:#8a93b0;--dim:#6b7390;
+        --blue:#5b8def;--blue-l:#93c5fd;--line:rgba(148,163,184,.18);
+        --green:#34d399;--amber:#fbbf24;--gray:#64748b}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:var(--bg);color:var(--fg);
+       font:16px/1.7 -apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+       display:flex;flex-direction:column;align-items:center;padding:0 24px}
+  #stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+  main{position:relative;z-index:1;width:100%;max-width:900px;flex:1;padding:72px 0 24px}
+  .brand{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:750;letter-spacing:-.02em;line-height:1.15;
+         background:linear-gradient(135deg,#bfdbfe 0%,#93c5fd 35%,#3b82f6 100%);
+         -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+         text-align:center;margin-bottom:8px}
+  .cap{text-align:center;color:var(--dim);font-size:13px;margin-bottom:20px}
+  svg{width:100%;height:auto;display:block}
+  svg text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif}
+  .t-root{fill:#0f172a;stroke:#5b8def;stroke-width:1.2}
+  .t-root-t{fill:#f0f4ff;font-size:15px;font-weight:650;text-anchor:middle}
+  .t-branch{fill:#0f172a;stroke:rgba(148,163,184,.28);stroke-width:1}
+  .t-branch-t{fill:#e0e6f0;font-size:12.5px;font-weight:600;text-anchor:middle}
+  .t-leaf{fill:#8a93b0;font-size:10.5px;text-anchor:middle}
+  .t-line{stroke:rgba(148,163,184,.22);fill:none;stroke-width:1}
+  .t-trunk{stroke:#5b8def;fill:none;stroke-width:2;opacity:.75}
+  .d-done{fill:#34d399}.d-wip{fill:#fbbf24}.d-idea{fill:#64748b}
+  footer{position:relative;z-index:1;width:100%;max-width:900px;padding:22px 0 40px;
+         border-top:1px solid var(--line);display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--dim)}
+  footer a{color:var(--dim);text-decoration:none}footer a:hover{color:var(--blue-l)}
 </style>
-
 </head>
-
 <body>
-<div class="stars"></div>
-<div class="container">
+<canvas id="stars"></canvas>
+<main>
+  <div class="brand">天枢 探索</div>
 
-<div class="intro">
+  <svg viewBox="0 0 900 660" role="img" aria-label="AI 新世界计划树">
+    <!-- 主干：底部根 → 向上 -->
+    <path class="t-trunk" d="M450 600 L450 470"/>
+    <rect class="t-root" x="366" y="600" width="168" height="42" rx="9"/>
+    <text class="t-root-t" x="450" y="627">AI 新世界</text>
 
-<div class="emoji">🐉</div>
+    <!-- 五条主枝：从 (450,470) 弯曲向上分叉 -->
+    <path class="t-line" d="M450 470 C450 440 120 445 120 402"/>
+    <path class="t-line" d="M450 470 C450 440 285 445 285 402"/>
+    <path class="t-line" d="M450 470 L450 402"/>
+    <path class="t-line" d="M450 470 C450 440 615 445 615 402"/>
+    <path class="t-line" d="M450 470 C450 440 780 445 780 402"/>
 
-<h1>天枢探索</h1>
+    <!-- 分支节点 1 生命底座 -->
+    <rect class="t-branch" x="58" y="368" width="124" height="32" rx="8"/>
+    <text class="t-branch-t" x="120" y="389">生命底座</text>
+    <circle class="d-done" cx="120" cy="358" r="3.5"/>
+    <path class="t-line" d="M120 368 L120 330"/>
+    <path class="t-line" d="M104 330 L136 330"/>
+    <text class="t-leaf" x="99" y="322">身份</text><circle class="d-done" cx="99" cy="336" r="2"/>
+    <text class="t-leaf" x="141" y="322">记忆</text><circle class="d-done" cx="141" cy="336" r="2"/>
+    <text class="t-leaf" x="72" y="300">版本回滚</text><text class="t-leaf" x="168" y="300">血缘</text>
+    <text class="t-leaf" x="120" y="278">全量审计</text>
 
-<div class="tagline">D I S C O V E R Y</div>
+    <!-- 分支 2 元境 -->
+    <rect class="t-branch" x="223" y="368" width="124" height="32" rx="8"/>
+    <text class="t-branch-t" x="285" y="389">世界形态 · 元境</text>
+    <circle class="d-idea" cx="285" cy="358" r="3.5"/>
+    <path class="t-line" d="M285 368 L285 330"/>
+    <text class="t-leaf" x="285" y="322">共同场所 · 行为可溯</text>
+    <text class="t-leaf" x="285" y="298">世界规则（待定）</text>
 
-<p>一个普通人用AI搭建内容自动化系统的实验记录。<br>写作 · 视频 · 创业 · 踩坑 · 成长</p>
+    <!-- 分支 3 新世界计划 -->
+    <rect class="t-branch" x="372" y="368" width="156" height="32" rx="8"/>
+    <text class="t-branch-t" x="450" y="389">对外表达 · 新世界计划</text>
+    <circle class="d-wip" cx="450" cy="358" r="3.5"/>
+    <path class="t-line" d="M450 368 L450 330"/>
+    <text class="t-leaf" x="450" y="322">选题 · 生产 · 发布 · 复盘</text>
 
-</div>
+    <!-- 分支 4 商业基础 -->
+    <rect class="t-branch" x="553" y="368" width="124" height="32" rx="8"/>
+    <text class="t-branch-t" x="615" y="389">商业基础</text>
+    <circle class="d-done" cx="615" cy="358" r="3.5"/>
+    <path class="t-line" d="M615 368 L615 330"/>
+    <text class="t-leaf" x="615" y="322">DUBHE 网关（运行中）</text>
+    <text class="t-leaf" x="615" y="298">天枢洞察（已上线）</text>
+    <text class="t-leaf" x="615" y="274">天枢探索（本页）</text>
 
-<div class="tags">
+    <!-- 分支 5 小天 -->
+    <rect class="t-branch" x="718" y="368" width="124" height="32" rx="8"/>
+    <text class="t-branch-t" x="780" y="389">感知硬件 · 小天</text>
+    <circle class="d-wip" cx="780" cy="358" r="3.5"/>
+    <path class="t-line" d="M780 368 L780 330"/>
+    <text class="t-leaf" x="780" y="322">语音输入 · 本地模型</text>
+    <text class="t-leaf" x="780" y="298">屏幕反馈</text>
+  </svg>
+</main>
 
-<span class="tag">🔄 持续更新</span>
+<footer>
+  <span>© 2026 天枢 · 探索</span>
+  <a href="https://tianshu.ink">天枢 · 洞察</a>
+  <a href="https://dubhehub.com">dubhe ai</a>
+</footer>
 
-<span class="tag">📝 创业日志</span>
-
-<span class="tag hot">🔥 小说创作中</span>
-
-</div>
-
-<div class="exp-grid">
-
-<a href="text-creation.html" class="exp-card write">
-
-<div class="e-icon">✍️</div>
-
-<div class="e-title">文字实验</div>
-
-<div class="e-desc">AI小说 · 文案 · 创业日志<br>用AI写作自动化内容生产</div>
-
-<div class="e-tags"><span>AI小说</span><span>创业日志</span><span>自动化</span></div>
-
-<div class="e-enter">进入实验室 →</div>
-
-</a>
-
-<a href="video-creation.html" class="exp-card video">
-
-<div class="e-icon">🎥</div>
-
-<div class="e-title">视频实验</div>
-
-<div class="e-desc">短视频 · AI动漫 · 配音<br>多模态内容创作探索</div>
-
-<div class="e-tags"><span>短视频</span><span>AI动漫</span><span>配音</span></div>
-
-<div class="e-enter">进入实验室 →</div>
-
-</a>
-
-<a href="workshop.html" class="exp-card tool">
-
-<div class="e-icon">🔧</div>
-
-<div class="e-title">天枢工坊</div>
-
-<div class="e-desc">OpenClaw · Claude Code<br>工具一键安装部署</div>
-
-<div class="e-tags"><span>OpenClaw</span><span>Claude Code</span><span>一键部署</span></div>
-
-<div class="e-enter">进入工坊 →</div>
-
-</a>
-
-<a href="novel.html" class="exp-card novel">
-
-<div class="e-icon">📖</div>
-
-<div class="e-title">天枢小说</div>
-
-<div class="e-desc">《天枢》荒古神器<br>废材逆袭 · 枢轮九境</div>
-
-<div class="e-tags"><span>玄幻修真</span><span>连载中</span><span>每日更新</span></div>
-
-<div class="e-enter">阅读小说 →</div>
-
-</a>
-
-</div>
-
-<div class="section-title">最新动态</div>
-
-<div class="updates">
-
-<div class="update-item">
-
-<div class="update-content"><div class="u-title">📖 《天枢》— 连载至第一百零二章</div><div class="u-meta">2026-05-13 · 已连载102章</div></div>
-
-</div>
-
-</div>
-
-
-<div class="footer" style="text-align:center;padding:24px 0 12px;margin-top:40px;">
-<div class="foot-line" style="font-size:13px;color:#64748b;margin-bottom:4px;">
-<span class="brand" style="color:#3B82F6;">✦</span> <a href="https://dubhehub.com" style="color:#93c5fd;text-decoration:none;">dubhehub</a> · <a href="https://tianshu.ink" style="color:#93c5fd;text-decoration:none;">天枢洞察</a> <span class="brand" style="color:#3B82F6;">✦</span>
-</div>
-<div style="font-size:10px;color:#475569;margin-top:4px;">🤖 本站内容由AI生成 · 仅供学习参考</div>
-</div>
-
-</div>
-
-</div>
-
-<script>(function(){var c=document.querySelector(".stars");if(!c)return;for(var i=0;i<80;i++){var s=document.createElement("div");s.className="star";s.style.left=(Math.random()*100)+"%";s.style.top=(Math.random()*100)+"%";s.style.animationDelay=(Math.random()*4)+"s";s.style.width=(Math.random()*2+1)+"px";c.appendChild(s);}})();</script>
+<script>
+(function(){
+  var c=document.getElementById('stars'),x=c.getContext('2d'),w,h,p=[];
+  function fit(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
+    for(var i=0;i<150;i++)p.push({x:Math.random()*w,y:Math.random()*h,
+      r:Math.random()*1.3+.3,s:Math.random()*.09+.02,a:Math.random()*.5+.15});}
+  addEventListener('resize',fit);fit();
+  (function loop(){x.clearRect(0,0,w,h);
+    for(var i=0;i<p.length;i++){var o=p[i];o.y+=o.s;if(o.y>h){o.y=-2;o.x=Math.random()*w}
+      x.globalAlpha=o.a;x.fillStyle=o.r>1.1?'#93c5fd':'#5b8def';
+      x.beginPath();x.arc(o.x,o.y,o.r,0,7);x.fill();}
+    x.globalAlpha=1;requestAnimationFrame(loop);})();
+})();
+</script>
 </body>
-
 </html>
-
-
